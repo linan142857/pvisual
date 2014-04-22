@@ -2,7 +2,6 @@
 
 <a href="http://pvisualjs.sinaapp.com/"><img src="http://pvisualjs.sinaapp.com/logo.png" align="left" width="85px" height="80px"></a>**Pvisual.js** 是一个基于可缩放矢量图形（Scalable Vector Graphics，SVG）的javascript动态生成数据可视化库。**Pvisual.js**   定位在满足可复用的大众化数据可视化需，基于svg，底层依赖开源图形库d3.js，提供直观、生动、交互、个性化定制的数据可视化图表。图表基于对DOM元素的的操作，支持多种输入和存储，支持动态数据更新。  
 　
-　　
 - [项目主页](http://pvisualjs.sinaapp.com)
 - [API文档](http://pvisualjs.sinaapp.com/api.html)
 - [样例](http://pvisualjs.sinaapp.com/example.html)  
@@ -38,11 +37,11 @@ $ python simpleHTTPserver -m 8000
 
 ## License
 
-Pvisual.js 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/MIT-License).
+Pvisual 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/LICENSE).
 
 ## Contact
 
 BUPTSSE · 创新项目“UGC数据分析与可视化开源web工具的研究” 创新小组制作
 有问题可咨询：  
-lyl(shuixuling@gmail.com)
+- lyl(shuixuling@gmail.com)
 如有疑问，或发现Bug，也可[提交Bug](https://github.com/linan142857pviuals/issues/new)
