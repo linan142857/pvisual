@@ -7,16 +7,14 @@
 - [API文档](http://pvisualjs.sinaapp.com/api.html)
 - [样例](http://pvisualjs.sinaapp.com/example.html)  
 
-***
 
 ### For Example:
 
-<img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" width="250px" height="250px"/>
-<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" width="250px" height="250px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" width="250px" height="250px" hspace="100px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" width="250px" height="250px" hspace="100px"/>
 
-***
 
-### Install
+## Install
 目前处于开发中，并未release正式版本，如需使用，请采用如下方式：
 
 ```bash
@@ -28,7 +26,7 @@ $ git clone git://github.com/linan142857/pvisual.git
 $ python simpleHTTPserver -m 8000 
 ```
 
-### Requirements
+## Requirements
 
 - [D3.js]("https://github.com/mbostock/d3")
 - [canvg.js](http://code.google.com/p/canvg/)
@@ -38,11 +36,13 @@ $ python simpleHTTPserver -m 8000
 - [js-xls](https://github.com/SheetJS/js-xls)
 - [js-xlxs](https://github.com/SheetJS/js-xlxs)
 
-### License
+## License
 
-Pvisual.js is available under the [MIT License](https://github.com/linan142857/pvisual/MIT-License).
+Pvisual.js 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/MIT-License).
 
-### Contact
+## Contact
 
 BUPTSSE · 创新项目“UGC数据分析与可视化开源web工具的研究” 创新小组制作
 有问题可咨询：
+lyl(shuixuling@gmail.com)
+如有疑问，或发现Bug，也可[提交Bug](https://github.com/linan142857pviuals/issues/new)
