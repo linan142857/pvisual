@@ -1,6 +1,6 @@
 # Pvisual.js
 =====
-<a href="http://pvisualjs.sinaapp.com/"><img src="http://pvisualjs.sinaapp.com/logo.png" align="left" style="width:50px;height:50px;margin-right:10px"></a>**Pvisual.js** 是一个基于可缩放矢量图形（Scalable Vector Graphics，SVG）的javascript动态生成数据可视化库。基于svg，底层依赖开源图形库d3.js，提供直观、生动、交互、个性化定制的数据可视化图表。图表基于对DOM元素的的操作，支持多种输入和存储，支持动态数据更新。
+<a href="http://pvisualjs.sinaapp.com/"><img src="http://pvisualjs.sinaapp.com/img/developers.png" align="left" style="margin-right:10px"></a>**Pvisual.js** 是一个基于可缩放矢量图形（Scalable Vector Graphics，SVG）的javascript动态生成数据可视化库。基于svg，底层依赖开源图形库d3.js，提供直观、生动、交互、个性化定制的数据可视化图表。图表基于对DOM元素的的操作，支持多种输入和存储，支持动态数据更新。
 
 - [项目主页](http://pvisualjs.sinaapp.com)
 - [API文档](http://pvisualjs.sinaapp.com/api.html)
