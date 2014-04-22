@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <row>
+        <name>北京</name>
+        <value>50</value>
+    </row>
+    <row>
+        <name>上海</name>
+        <value>45</value>
+    </row>
+    <row>
+        <name>广州</name>
+        <value>40</value>
+    </row>
+    <row>
+        <name>深圳</name>
+        <value>35</value>
+    </row>
+    <row>
+        <name>西安</name>
+        <value>30</value>
+    </row>
+    <row>
+        <name>昆明</name>
+        <value>25</value>
+    </row>
+    <row>
+        <name>武汉</name>
+        <value>20</value>
+    </row>
+    <row>
+        <name>拉萨</name>
+        <value>15</value>
+    </row>
+    <row>
+        <name>哈尔滨</name>
+        <value>10</value>
+    </row>
+</root>

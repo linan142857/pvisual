@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>heat</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var heat = pvisual.model.heat();
+    heat.xLegend('date')
+    .size(900, 400)
+    .sizeAvail(700, 300)
+    .gradientColor('white', 'green')
+    .yLegend('No.');
+    heat.csv('heat.csv', function(d) {
+        heat.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

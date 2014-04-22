@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>chernoff</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    textarea{
+        margin-top: 50px;
+        margin-left: 30px;
+        width: 500px;
+        height: 500px;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var chernoff = pvisual.model.chernoff();
+    chernoff.csv('chernoff.csv', function(d) {
+        chernoff.data(d).size(800, 400).sizeAvail(800, 400).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

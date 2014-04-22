@@ -1,0 +1,50 @@
+[
+    {
+        "x": "11-Oct-13",
+        "IE": 41.62,
+        "Chrome": 22.36,
+        "Firefox": 22.58,
+        "Safari": 9.13,
+        "Opera": 1.22
+    },
+    {
+        "x": "11-Oct-14",
+        "IE": 41.95,
+        "Chrome": 22.15,
+        "Firefox": 25.78,
+        "Safari": 8.79,
+        "Opera": 1.25
+    },
+    {
+        "x": "11-Oct-15",
+        "IE": 37.64,
+        "Chrome": 24.77,
+        "Firefox": 25.96,
+        "Safari": 10.16,
+        "Opera": 1.39
+    },
+    {
+        "x": "11-Oct-16",
+        "IE": 37.27,
+        "Chrome": 24.65,
+        "Firefox": 25.98,
+        "Safari": 10.59,
+        "Opera": 1.44
+    },
+    {
+        "x": "11-Oct-17",
+        "IE": 42.74,
+        "Chrome": 21.87,
+        "Firefox": 25.01,
+        "Safari": 9.12,
+        "Opera": 1.17
+    },
+    {
+        "x": "11-Oct-18",
+        "IE": 42.14,
+        "Chrome": 22.22,
+        "Firefox": 25.26,
+        "Safari": 9.1,
+        "Opera": 1.19
+    }
+]

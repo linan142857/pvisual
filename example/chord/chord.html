@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>chord</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var chord = pvisual.model.chord();
+    chord.size(900, 900).sizeAvail(600, 600);
+    chord.csv('chord.csv', function(d) {
+        chord.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

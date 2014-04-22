@@ -1,0 +1,22 @@
+{
+  "name": "pvisual",
+  "version": "0.0.1",
+  "description": "A free javascript chart library for svg.",
+  "keywords": [
+    "dom",
+    "visualization",
+    "svg"
+  ],
+  "author": "pvisual",
+  "homepage": "http://pvisualjs.sinaapp.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linan142857/pvisual.git"
+  }
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/linan142857/pvisual/LICENSE"
+    }
+  ]
+}

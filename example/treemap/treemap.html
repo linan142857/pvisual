@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>treemap</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var treemap = pvisual.model.treemap();
+    treemap.size(900, 500).sizeAvail(900, 500);
+    treemap.json('treemap.json', function(d) {
+        treemap.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

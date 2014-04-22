@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>graph</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var graph = pvisual.model.graph();
+    graph.size(700, 700).tran(-50, -150);
+    graph.json('graph.json', function(d) {
+        graph.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

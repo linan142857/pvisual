@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>multiline</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var multiline = pvisual.model.multiline();
+    multiline.timeFormat('%Y%m%d').xtickRotate(30)
+    .color(multiline.color().domain(['#3bb4df', '#FF5555', 'orange']));
+    multiline.csv('multiline.csv', function(d) {
+        multiline.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

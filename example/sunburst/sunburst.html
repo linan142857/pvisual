@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>sunburst</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var sunburst = pvisual.model.sunburst();
+    sunburst.json('sunburst.json', function(d) {
+        sunburst.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

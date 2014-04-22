@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>tree</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var tree = pvisual.model.tree();
+    tree.json('tree.json', function(d){
+        tree.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

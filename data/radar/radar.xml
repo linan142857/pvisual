@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <row>
+        <name>Smartphone</name>
+        <data>
+            <row>
+                <axis>Email</axis>
+                <value>0.59</value>
+            </row>
+            <row>
+                <axis>Social Networks</axis>
+                <value>0.56</value>
+            </row>
+            <row>
+                <axis>Internet Banking</axis>
+                <value>0.42</value>
+            </row>
+            <row>
+                <axis>News Sportsites</axis>
+                <value>0.34</value>
+            </row>
+            <row>
+                <axis>Search Engine</axis>
+                <value>0.48</value>
+            </row>
+            <row>
+                <axis>View Shopping sites</axis>
+                <value>0.14</value>
+            </row>
+            <row>
+                <axis>Paying Online</axis>
+                <value>0.11</value>
+            </row>
+            <row>
+                <axis>Buy Online</axis>
+                <value>0.05</value>
+            </row>
+            <row>
+                <axis>Stream Music</axis>
+                <value>0.07</value>
+            </row>
+            <row>
+                <axis>Online Gaming</axis>
+                <value>0.12</value>
+            </row>
+            <row>
+                <axis>Navigation</axis>
+                <value>0.27</value>
+            </row>
+            <row>
+                <axis>App connected to TV program</axis>
+                <value>0.03</value>
+            </row>
+            <row>
+                <axis>Offline Gaming</axis>
+                <value>0.12</value>
+            </row>
+            <row>
+                <axis>Photo Video</axis>
+                <value>0.4</value>
+            </row>
+            <row>
+                <axis>Reading</axis>
+                <value>0.03</value>
+            </row>
+            <row>
+                <axis>Listen Music</axis>
+                <value>0.22</value>
+            </row>
+            <row>
+                <axis>Watch TV</axis>
+                <value>0.03</value>
+            </row>
+            <row>
+                <axis>TV Movies Streaming</axis>
+                <value>0.03</value>
+            </row>
+            <row>
+                <axis>Listen Radio</axis>
+                <value>0.07</value>
+            </row>
+            <row>
+                <axis>Sending Money</axis>
+                <value>0.18</value>
+            </row>
+            <row>
+                <axis>Other</axis>
+                <value>0.07</value>
+            </row>
+            <row>
+                <axis>Use less Once week</axis>
+                <value>0.08</value>
+            </row>
+        </data>
+    </row>
+    <row>
+        <name>Tablet</name>
+        <data>
+            <row>
+                <axis>Email</axis>
+                <value>0.48</value>
+            </row>
+            <row>
+                <axis>Social Networks</axis>
+                <value>0.41</value>
+            </row>
+            <row>
+                <axis>Internet Banking</axis>
+                <value>0.27</value>
+            </row>
+            <row>
+                <axis>News Sportsites</axis>
+                <value>0.28</value>
+            </row>
+            <row>
+                <axis>Search Engine</axis>
+                <value>0.46</value>
+            </row>
+            <row>
+                <axis>View Shopping sites</axis>
+                <value>0.29</value>
+            </row>
+            <row>
+                <axis>Paying Online</axis>
+                <value>0.11</value>
+            </row>
+            <row>
+                <axis>Buy Online</axis>
+                <value>0.14</value>
+            </row>
+            <row>
+                <axis>Stream Music</axis>
+                <value>0.05</value>
+            </row>
+            <row>
+                <axis>Online Gaming</axis>
+                <value>0.19</value>
+            </row>
+            <row>
+                <axis>Navigation</axis>
+                <value>0.14</value>
+            </row>
+            <row>
+                <axis>App connected to TV program</axis>
+                <value>0.06</value>
+            </row>
+            <row>
+                <axis>Offline Gaming</axis>
+                <value>0.24</value>
+            </row>
+            <row>
+                <axis>Photo Video</axis>
+                <value>0.17</value>
+            </row>
+            <row>
+                <axis>Reading</axis>
+                <value>0.15</value>
+            </row>
+            <row>
+                <axis>Listen Music</axis>
+                <value>0.12</value>
+            </row>
+            <row>
+                <axis>Watch TV</axis>
+                <value>0.1</value>
+            </row>
+            <row>
+                <axis>TV Movies Streaming</axis>
+                <value>0.14</value>
+            </row>
+            <row>
+                <axis>Listen Radio</axis>
+                <value>0.06</value>
+            </row>
+            <row>
+                <axis>Sending Money</axis>
+                <value>0.16</value>
+            </row>
+            <row>
+                <axis>Other</axis>
+                <value>0.07</value>
+            </row>
+            <row>
+                <axis>Use less Once week</axis>
+                <value>0.17</value>
+            </row>
+        </data>
+    </row>
+</root>
+	

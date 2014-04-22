@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <nodes>
+        <node>
+            <name>Agricultural 'waste'</name>
+        </node>
+        <node>
+            <name>Bio-conversion</name>
+        </node>
+        <node>
+            <name>Liquid</name>
+        </node>
+        <node>
+            <name>Losses</name>
+        </node>
+        <node>
+            <name>Solid</name>
+        </node>
+        <node>
+            <name>Gas</name>
+        </node>
+        <node>
+            <name>Biofuel imports</name>
+        </node>
+        <node>
+            <name>Biomass imports</name>
+        </node>
+        <node>
+            <name>Coal imports</name>
+        </node>
+        <node>
+            <name>Coal</name>
+        </node>
+        <node>
+            <name>Coal reserves</name>
+        </node>
+        <node>
+            <name>District heating</name>
+        </node>
+        <node>
+            <name>Industry</name>
+        </node>
+        <node>
+            <name>Heating and cooling - commercial</name>
+        </node>
+        <node>
+            <name>Heating and cooling - homes</name>
+        </node>
+        <node>
+            <name>Electricity grid</name>
+        </node>
+        <node>
+            <name>Over generation / exports</name>
+        </node>
+        <node>
+            <name>H2 conversion</name>
+        </node>
+        <node>
+            <name>Road transport</name>
+        </node>
+        <node>
+            <name>Agriculture</name>
+        </node>
+        <node>
+            <name>Rail transport</name>
+        </node>
+        <node>
+            <name>Lighting &amp; appliances - commercial</name>
+        </node>
+        <node>
+            <name>Lighting &amp; appliances - homes</name>
+        </node>
+        <node>
+            <name>Gas imports</name>
+        </node>
+        <node>
+            <name>Thermal generation</name>
+        </node>
+        <node>
+            <name>Geothermal</name>
+        </node>
+        <node>
+            <name>H2</name>
+        </node>
+        <node>
+            <name>Hydro</name>
+        </node>
+        <node>
+            <name>International shipping</name>
+        </node>
+        <node>
+            <name>Domestic aviation</name>
+        </node>
+        <node>
+            <name>International aviation</name>
+        </node>
+        <node>
+            <name>National navigation</name>
+        </node>
+        <node>
+            <name>Marine algae</name>
+        </node>
+        <node>
+            <name>Nuclear</name>
+        </node>
+        <node>
+            <name>Oil imports</name>
+        </node>
+        <node>
+            <name>Oil</name>
+        </node>
+        <node>
+            <name>Oil reserves</name>
+        </node>
+        <node>
+            <name>Other waste</name>
+        </node>
+        <node>
+            <name>Pumped heat</name>
+        </node>
+        <node>
+            <name>Solar PV</name>
+        </node>
+        <node>
+            <name>Solar Thermal</name>
+        </node>
+        <node>
+            <name>Solar</name>
+        </node>
+        <node>
+            <name>Tidal</name>
+        </node>
+        <node>
+            <name>UK land based bioenergy</name>
+        </node>
+        <node>
+            <name>Wave</name>
+        </node>
+        <node>
+            <name>Wind</name>
+        </node>
+    </nodes> 
+    <links>
+        <link>
+            <source>Agricultural 'waste'</source>
+            <target>Bio-conversion</target>
+            <value>124.729</value>
+        </link>
+        <link>
+            <source>Bio-conversion</source>
+            <target>Liquid</target>
+            <value>0.597</value>
+        </link>
+        <link>
+            <source>Bio-conversion</source>
+            <target>Losses</target>
+            <value>26.862</value>
+        </link>
+        <link>
+            <source>Bio-conversion</source>
+            <target>Solid</target>
+            <value>280.322</value>
+        </link>
+        <link>
+            <source>Bio-conversion</source>
+            <target>Gas</target>
+            <value>81.144</value>
+        </link>
+        <link>
+            <source>Biofuel imports</source>
+            <target>Liquid</target>
+            <value>35</value>
+        </link>
+        <link>
+            <source>Biomass imports</source>
+            <target>Solid</target>
+            <value>35</value>
+        </link>
+        <link>
+            <source>Coal imports</source>
+            <target>Coal</target>
+            <value>11.606</value>
+        </link>
+        <link>
+            <source>Coal reserves</source>
+            <target>Coal</target>
+            <value>63.965</value>
+        </link>
+        <link>
+            <source>Coal</source>
+            <target>Solid</target>
+            <value>75.571</value>
+        </link>
+        <link>
+            <source>District heating</source>
+            <target>Industry</target>
+            <value>10.639</value>
+        </link>
+        <link>
+            <source>District heating</source>
+            <target>Heating and cooling - commercial</target>
+            <value>22.505</value>
+        </link>
+        <link>
+            <source>District heating</source>
+            <target>Heating and cooling - homes</target>
+            <value>46.184</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Over generation / exports</target>
+            <value>104.453</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Heating and cooling - homes</target>
+            <value>113.726</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>H2 conversion</target>
+            <value>27.14</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Industry</target>
+            <value>342.165</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Road transport</target>
+            <value>37.797</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Agriculture</target>
+            <value>4.412</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Heating and cooling - commercial</target>
+            <value>40.858</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Losses</target>
+            <value>56.691</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Rail transport</target>
+            <value>7.863</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Lighting &amp; appliances - commercial</target>
+            <value>90.008</value>
+        </link>
+        <link>
+            <source>Electricity grid</source>
+            <target>Lighting &amp; appliances - homes</target>
+            <value>93.494</value>
+        </link>
+        <link>
+            <source>Gas imports</source>
+            <target>Thermal generation</target>
+            <value>40.719</value>
+        </link>
+        <link>
+            <source>Geothermal</source>
+            <target>Thermal generation</target>
+            <value>82.233</value>
+        </link>
+        <link>
+            <source>Gas</source>
+            <target>Heating and cooling - commercial</target>
+            <value>0.129</value>
+        </link>
+        <link>
+            <source>Gas</source>
+            <target>Losses</target>
+            <value>1.401</value>
+        </link>
+        <link>
+            <source>Gas</source>
+            <target>H2</target>
+            <value>151.891</value>
+        </link>
+        <link>
+            <source>Gas</source>
+            <target>Agriculture</target>
+            <value>2.096</value>
+        </link>
+        <link>
+            <source>Gas</source>
+            <target>Industry</target>
+            <value>48.58</value>
+        </link>
+        <link>
+            <source>Hydro</source>
+            <target>Electricity grid</target>
+            <value>7.013</value>
+        </link>
+        <link>
+            <source>H2 conversion</source>
+            <target>International shipping</target>
+            <value>20.897</value>
+        </link>
+        <link>
+            <source>H2 conversion</source>
+            <target>Losses</target>
+            <value>6.242</value>
+        </link>
+        <link>
+            <source>International shipping</source>
+            <target>Road transport</target>
+            <value>20.897</value>
+        </link>
+        <link>
+            <source>Domestic aviation</source>
+            <target>Electricity grid</target>
+            <value>6.995</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>Industry</target>
+            <value>121.066</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>International aviation</target>
+            <value>128.69</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>Road transport</target>
+            <value>135.835</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>National navigation</target>
+            <value>14.458</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>Marine algae</target>
+            <value>206.267</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>Agriculture</target>
+            <value>3.64</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>Nuclear</target>
+            <value>33.218</value>
+        </link>
+        <link>
+            <source>Liquid</source>
+            <target>Rail transport</target>
+            <value>4.413</value>
+        </link>
+        <link>
+            <source>Oil imports</source>
+            <target>Bio-conversion</target>
+            <value>4.375</value>
+        </link>
+        <link>
+            <source>Thermal generation</source>
+            <target>Gas</target>
+            <value>122.952</value>
+        </link>
+        <link>
+            <source>Oil</source>
+            <target>H2</target>
+            <value>839.978</value>
+        </link>
+        <link>
+            <source>Oil reserves</source>
+            <target>Other waste</target>
+            <value>504.287</value>
+        </link>
+        <link>
+            <source>Pumped heat</source>
+            <target>Other waste</target>
+            <value>107.703</value>
+        </link>
+        <link>
+            <source>Other waste</source>
+            <target>Liquid</target>
+            <value>611.99</value>
+        </link>
+        <link>
+            <source>Solar PV</source>
+            <target>Solid</target>
+            <value>56.587</value>
+        </link>
+        <link>
+            <source>Solar PV</source>
+            <target>Bio-conversion</target>
+            <value>77.81</value>
+        </link>
+        <link>
+            <source>Solar Thermal</source>
+            <target>Heating and cooling - homes</target>
+            <value>193.026</value>
+        </link>
+        <link>
+            <source>Solar Thermal</source>
+            <target>Heating and cooling - commercial</target>
+            <value>70.672</value>
+        </link>
+        <link>
+            <source>Solar</source>
+            <target>Electricity grid</target>
+            <value>59.901</value>
+        </link>
+        <link>
+            <source>Tidal</source>
+            <target>Heating and cooling - homes</target>
+            <value>19.263</value>
+        </link>
+        <link>
+            <source>UK land based bioenergy</source>
+            <target>Tidal</target>
+            <value>19.263</value>
+        </link>
+        <link>
+            <source>UK land based bioenergy</source>
+            <target>Solar</target>
+            <value>59.901</value>
+        </link>
+        <link>
+            <source>Solid</source>
+            <target>Agriculture</target>
+            <value>0.882</value>
+        </link>
+        <link>
+            <source>Solid</source>
+            <target>H2</target>
+            <value>400.12</value>
+        </link>
+        <link>
+            <source>Solid</source>
+            <target>Industry</target>
+            <value>46.477</value>
+        </link>
+        <link>
+            <source>H2</source>
+            <target>Electricity grid</target>
+            <value>525.531</value>
+        </link>
+        <link>
+            <source>H2</source>
+            <target>Losses</target>
+            <value>787.129</value>
+        </link>
+        <link>
+            <source>H2</source>
+            <target>District heating</target>
+            <value>79.329</value>
+        </link>
+        <link>
+            <source>Wave</source>
+            <target>Electricity grid</target>
+            <value>9.452</value>
+        </link>
+        <link>
+            <source>Wind</source>
+            <target>Bio-conversion</target>
+            <value>182.01</value>
+        </link>
+    </links>
+</root>
+	

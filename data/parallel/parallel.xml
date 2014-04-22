@@ -1,0 +1,4063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <row>
+        <name>AMC Ambassador Brougham</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>360</displacement>
+        <power>175</power>
+        <weight>3821</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>AMC Ambassador DPL</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>390</displacement>
+        <power>190</power>
+        <weight>3850</weight>
+        <o_60_mph>8.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>AMC Ambassador SST</name>
+        <economy>17</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>150</power>
+        <weight>3672</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>AMC Concord DL 6</name>
+        <economy>20.2</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>90</power>
+        <weight>3265</weight>
+        <o_60_mph>18.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>AMC Concord DL</name>
+        <economy>18.1</economy>
+        <cylinders>6</cylinders>
+        <displacement>258</displacement>
+        <power>120</power>
+        <weight>3410</weight>
+        <o_60_mph>15.1</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>AMC Concord DL</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>100</power>
+        <weight>3035</weight>
+        <o_60_mph>20.5</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>AMC Concord</name>
+        <economy>19.4</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>90</power>
+        <weight>3210</weight>
+        <o_60_mph>17.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>AMC Concord</name>
+        <economy>24.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>90</power>
+        <weight>3003</weight>
+        <o_60_mph>20.1</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>AMC Gremlin</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>100</power>
+        <weight>2789</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>AMC Gremlin</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>100</power>
+        <weight>2634</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>AMC Gremlin</name>
+        <economy>20</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>100</power>
+        <weight>2914</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>AMC Gremlin</name>
+        <economy>21</economy>
+        <cylinders>6</cylinders>
+        <displacement>199</displacement>
+        <power>90</power>
+        <weight>2648</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>AMC Hornet Sportabout (Wagon)</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>258</displacement>
+        <power>110</power>
+        <weight>2962</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>AMC Hornet</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>199</displacement>
+        <power>97</power>
+        <weight>2774</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>AMC Hornet</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>100</power>
+        <weight>2945</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>AMC Hornet</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>100</power>
+        <weight>2901</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>AMC Hornet</name>
+        <economy>22.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>90</power>
+        <weight>3085</weight>
+        <o_60_mph>17.6</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>AMC Matador (Wagon)</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>150</power>
+        <weight>4257</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>AMC Matador (Wagon)</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>150</power>
+        <weight>3892</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>AMC Matador</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>150</power>
+        <weight>3672</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>AMC Matador</name>
+        <economy>15</economy>
+        <cylinders>6</cylinders>
+        <displacement>258</displacement>
+        <power>110</power>
+        <weight>3730</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>AMC Matador</name>
+        <economy>15.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>120</power>
+        <weight>3962</weight>
+        <o_60_mph>13.9</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>AMC Matador</name>
+        <economy>16</economy>
+        <cylinders>6</cylinders>
+        <displacement>258</displacement>
+        <power>110</power>
+        <weight>3632</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>AMC Matador</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>100</power>
+        <weight>3288</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>AMC Pacer D/L</name>
+        <economy>17.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>258</displacement>
+        <power>95</power>
+        <weight>3193</weight>
+        <o_60_mph>17.8</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>AMC Pacer</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>90</power>
+        <weight>3211</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>AMC Rebel SST (Wagon)</name>
+        <economy></economy>
+        <cylinders>8</cylinders>
+        <displacement>360</displacement>
+        <power>175</power>
+        <weight>3850</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>AMC Rebel SST</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>150</power>
+        <weight>3433</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>AMC Spirit DL</name>
+        <economy>27.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>80</power>
+        <weight>2670</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Audi 100 LS</name>
+        <economy>20</economy>
+        <cylinders>4</cylinders>
+        <displacement>114</displacement>
+        <power>91</power>
+        <weight>2582</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Audi 100 LS</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>115</displacement>
+        <power>95</power>
+        <weight>2694</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Audi 100 LS</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>107</displacement>
+        <power>90</power>
+        <weight>2430</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Audi 4000</name>
+        <economy>34.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>78</power>
+        <weight>2188</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Audi 5000</name>
+        <economy>20.3</economy>
+        <cylinders>5</cylinders>
+        <displacement>131</displacement>
+        <power>103</power>
+        <weight>2830</weight>
+        <o_60_mph>15.9</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Audi 5000S (Diesel)</name>
+        <economy>36.4</economy>
+        <cylinders>5</cylinders>
+        <displacement>121</displacement>
+        <power>67</power>
+        <weight>2950</weight>
+        <o_60_mph>19.9</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Audi Fox</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>83</power>
+        <weight>2219</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>BMW 2002</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>113</power>
+        <weight>2234</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>BMW 320i</name>
+        <economy>21.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>110</power>
+        <weight>2600</weight>
+        <o_60_mph>12.8</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Buick Century 350</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>175</power>
+        <weight>4100</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Buick Century Limited</name>
+        <economy>25</economy>
+        <cylinders>6</cylinders>
+        <displacement>181</displacement>
+        <power>110</power>
+        <weight>2945</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Buick Century Luxus (Wagon)</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>150</power>
+        <weight>4699</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Buick Century Special</name>
+        <economy>20.6</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>105</power>
+        <weight>3380</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Buick Century</name>
+        <economy>17</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>110</power>
+        <weight>3907</weight>
+        <o_60_mph>21</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Buick Century</name>
+        <economy>22.4</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>110</power>
+        <weight>3415</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Buick Electra 225 Custom</name>
+        <economy>12</economy>
+        <cylinders>8</cylinders>
+        <displacement>455</displacement>
+        <power>225</power>
+        <weight>4951</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Buick Estate Wagon (Wagon)</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>455</displacement>
+        <power>225</power>
+        <weight>3086</weight>
+        <o_60_mph>10</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Buick Estate Wagon (Wagon)</name>
+        <economy>16.9</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>155</power>
+        <weight>4360</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Buick Lesabre Custom</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>155</power>
+        <weight>4502</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Buick Opel Isuzu Deluxe</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>111</displacement>
+        <power>80</power>
+        <weight>2155</weight>
+        <o_60_mph>14.8</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Buick Regal Sport Coupe (Turbo)</name>
+        <economy>17.7</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>165</power>
+        <weight>3445</weight>
+        <o_60_mph>13.4</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Buick Skyhawk</name>
+        <economy>21</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>110</power>
+        <weight>3039</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Buick Skylark 320</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>165</power>
+        <weight>3693</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Buick Skylark Limited</name>
+        <economy>28.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>90</power>
+        <weight>2670</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Buick Skylark</name>
+        <economy>20.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>105</power>
+        <weight>3425</weight>
+        <o_60_mph>16.9</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Buick Skylark</name>
+        <economy>26.6</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>84</power>
+        <weight>2635</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Cadillac Eldorado</name>
+        <economy>23</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>125</power>
+        <weight>3900</weight>
+        <o_60_mph>17.4</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Cadillac Seville</name>
+        <economy>16.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>180</power>
+        <weight>4380</weight>
+        <o_60_mph>12.1</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Chevroelt Chevelle Malibu</name>
+        <economy>16</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>105</power>
+        <weight>3897</weight>
+        <o_60_mph>18.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Chevrolet Bel Air</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>145</power>
+        <weight>4440</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Chevrolet Camaro</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>90</power>
+        <weight>2950</weight>
+        <o_60_mph>17.3</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Chevrolet Caprice Classic</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>150</power>
+        <weight>4464</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chevrolet Caprice Classic</name>
+        <economy>17</economy>
+        <cylinders>8</cylinders>
+        <displacement>305</displacement>
+        <power>130</power>
+        <weight>3840</weight>
+        <o_60_mph>15.4</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Chevrolet Caprice Classic</name>
+        <economy>17.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>305</displacement>
+        <power>145</power>
+        <weight>3880</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Chevrolet Cavalier 2-Door</name>
+        <economy>34</economy>
+        <cylinders>4</cylinders>
+        <displacement>112</displacement>
+        <power>88</power>
+        <weight>2395</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Chevrolet Cavalier Wagon</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>112</displacement>
+        <power>88</power>
+        <weight>2640</weight>
+        <o_60_mph>18.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Chevrolet Cavalier</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>112</displacement>
+        <power>88</power>
+        <weight>2605</weight>
+        <o_60_mph>19.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevelle Concours (Wagon)</name>
+        <economy></economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>165</power>
+        <weight>4142</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevelle Concours (Wagon)</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>307</displacement>
+        <power>130</power>
+        <weight>4098</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevelle Malibu Classic</name>
+        <economy>16</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>100</power>
+        <weight>3781</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevelle Malibu Classic</name>
+        <economy>17.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>305</displacement>
+        <power>140</power>
+        <weight>4215</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevelle Malibu</name>
+        <economy>17</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>100</power>
+        <weight>3329</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevelle Malibu</name>
+        <economy>18</economy>
+        <cylinders>8</cylinders>
+        <displacement>307</displacement>
+        <power>130</power>
+        <weight>3504</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevette</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>52</power>
+        <weight>2035</weight>
+        <o_60_mph>22.2</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevette</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>68</power>
+        <weight>2155</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevette</name>
+        <economy>30.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>63</power>
+        <weight>2051</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Chevrolet Chevette</name>
+        <economy>32.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>70</power>
+        <weight>2120</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Chevrolet Citation</name>
+        <economy>23.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>173</displacement>
+        <power>110</power>
+        <weight>2725</weight>
+        <o_60_mph>12.6</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Chevrolet Citation</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>90</power>
+        <weight>2678</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Chevrolet Citation</name>
+        <economy>28.8</economy>
+        <cylinders>6</cylinders>
+        <displacement>173</displacement>
+        <power>115</power>
+        <weight>2595</weight>
+        <o_60_mph>11.3</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Chevrolet Concours</name>
+        <economy>17.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>110</power>
+        <weight>3520</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Chevrolet Impala</name>
+        <economy>11</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>150</power>
+        <weight>4997</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chevrolet Impala</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>165</power>
+        <weight>4274</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Chevrolet Impala</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>165</power>
+        <weight>4209</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Chevrolet Impala</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>454</displacement>
+        <power>220</power>
+        <weight>4354</weight>
+        <o_60_mph>9</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Chevrolet Malibu Classic (Wagon)</name>
+        <economy>19.2</economy>
+        <cylinders>8</cylinders>
+        <displacement>267</displacement>
+        <power>125</power>
+        <weight>3605</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Chevrolet Malibu</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>145</power>
+        <weight>3988</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chevrolet Malibu</name>
+        <economy>20.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>95</power>
+        <weight>3155</weight>
+        <o_60_mph>18.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Chevrolet Monte Carlo Landau</name>
+        <economy>15.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>170</power>
+        <weight>4165</weight>
+        <o_60_mph>11.4</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Chevrolet Monte Carlo Landau</name>
+        <economy>19.2</economy>
+        <cylinders>8</cylinders>
+        <displacement>305</displacement>
+        <power>145</power>
+        <weight>3425</weight>
+        <o_60_mph>13.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Chevrolet Monte Carlo S</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>145</power>
+        <weight>4082</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chevrolet Monte Carlo</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>150</power>
+        <weight>3761</weight>
+        <o_60_mph>9.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Chevrolet Monza 2+2</name>
+        <economy>20</economy>
+        <cylinders>8</cylinders>
+        <displacement>262</displacement>
+        <power>110</power>
+        <weight>3221</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Chevrolet Nova Custom</name>
+        <economy>16</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>100</power>
+        <weight>3278</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chevrolet Nova</name>
+        <economy>15</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>100</power>
+        <weight>3336</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Chevrolet Nova</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>105</power>
+        <weight>3459</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Chevrolet Nova</name>
+        <economy>22</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>105</power>
+        <weight>3353</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Chevrolet Vega (Wagon)</name>
+        <economy>22</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>72</power>
+        <weight>2408</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Chevrolet Vega 2300</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>90</power>
+        <weight>2264</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Chevrolet Vega</name>
+        <economy>20</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>90</power>
+        <weight>2408</weight>
+        <o_60_mph>19.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Chevrolet Vega</name>
+        <economy>21</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>72</power>
+        <weight>2401</weight>
+        <o_60_mph>19.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chevrolet Vega</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>75</power>
+        <weight>2542</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Chevrolet Woody</name>
+        <economy>24.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>60</power>
+        <weight>2164</weight>
+        <o_60_mph>22.1</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Chevy C10</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>145</power>
+        <weight>4055</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Chevy C20</name>
+        <economy>10</economy>
+        <cylinders>8</cylinders>
+        <displacement>307</displacement>
+        <power>200</power>
+        <weight>4376</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Chevy S-10</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>119</displacement>
+        <power>82</power>
+        <weight>2720</weight>
+        <o_60_mph>19.4</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Chrysler Cordoba</name>
+        <economy>15.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>190</power>
+        <weight>4325</weight>
+        <o_60_mph>12.2</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Chrysler Lebaron Medallion</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>156</displacement>
+        <power>92</power>
+        <weight>2585</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Chrysler Lebaron Salon</name>
+        <economy>17.6</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>85</power>
+        <weight>3465</weight>
+        <o_60_mph>16.6</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Chrysler Lebaron Town &amp; Country (Wagon)</name>
+        <economy>18.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>360</displacement>
+        <power>150</power>
+        <weight>3940</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Chrysler New Yorker Brougham</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>440</displacement>
+        <power>215</power>
+        <weight>4735</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Chrysler Newport Royal</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>190</power>
+        <weight>4422</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Citroen DS-21 Pallas</name>
+        <economy></economy>
+        <cylinders>4</cylinders>
+        <displacement>133</displacement>
+        <power>115</power>
+        <weight>3090</weight>
+        <o_60_mph>17.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Datsun 1200</name>
+        <economy>35</economy>
+        <cylinders>4</cylinders>
+        <displacement>72</displacement>
+        <power>69</power>
+        <weight>1613</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Datsun 200SX</name>
+        <economy>23.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>119</displacement>
+        <power>97</power>
+        <weight>2405</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Datsun 200SX</name>
+        <economy>32.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>119</displacement>
+        <power>100</power>
+        <weight>2615</weight>
+        <o_60_mph>14.8</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Datsun 210</name>
+        <economy>31.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>65</power>
+        <weight>2020</weight>
+        <o_60_mph>19.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Datsun 210</name>
+        <economy>37</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>65</power>
+        <weight>1975</weight>
+        <o_60_mph>19.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Datsun 210</name>
+        <economy>40.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>65</power>
+        <weight>2110</weight>
+        <o_60_mph>19.2</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Datsun 280ZX</name>
+        <economy>32.7</economy>
+        <cylinders>6</cylinders>
+        <displacement>168</displacement>
+        <power>132</power>
+        <weight>2910</weight>
+        <o_60_mph>11.4</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Datsun 310 GX</name>
+        <economy>38</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>67</power>
+        <weight>1995</weight>
+        <o_60_mph>16.2</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Datsun 310</name>
+        <economy>37.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>86</displacement>
+        <power>65</power>
+        <weight>2019</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Datsun 510 (Wagon)</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>92</power>
+        <weight>2288</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Datsun 510 Hatchback</name>
+        <economy>37</economy>
+        <cylinders>4</cylinders>
+        <displacement>119</displacement>
+        <power>92</power>
+        <weight>2434</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Datsun 510</name>
+        <economy>27.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>119</displacement>
+        <power>97</power>
+        <weight>2300</weight>
+        <o_60_mph>14.7</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Datsun 610</name>
+        <economy>22</economy>
+        <cylinders>4</cylinders>
+        <displacement>108</displacement>
+        <power>94</power>
+        <weight>2379</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Datsun 710</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>119</displacement>
+        <power>97</power>
+        <weight>2545</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Datsun 710</name>
+        <economy>32</economy>
+        <cylinders>4</cylinders>
+        <displacement>83</displacement>
+        <power>61</power>
+        <weight>2003</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Datsun 810 Maxima</name>
+        <economy>24.2</economy>
+        <cylinders>6</cylinders>
+        <displacement>146</displacement>
+        <power>120</power>
+        <weight>2930</weight>
+        <o_60_mph>13.8</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Datsun 810</name>
+        <economy>22</economy>
+        <cylinders>6</cylinders>
+        <displacement>146</displacement>
+        <power>97</power>
+        <weight>2815</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Datsun B-210</name>
+        <economy>32</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>70</power>
+        <weight>1990</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Datsun B210 GX</name>
+        <economy>39.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>70</power>
+        <weight>2070</weight>
+        <o_60_mph>18.6</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Datsun B210</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>79</displacement>
+        <power>67</power>
+        <weight>1950</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Datsun F-10 Hatchback</name>
+        <economy>33.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power>70</power>
+        <weight>1945</weight>
+        <o_60_mph>16.8</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Datsun PL510</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>88</power>
+        <weight>2130</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Datsun PL510</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>88</power>
+        <weight>2130</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Dodge Aries SE</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>135</displacement>
+        <power>84</power>
+        <weight>2525</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Dodge Aries Wagon (Wagon)</name>
+        <economy>25.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>156</displacement>
+        <power>92</power>
+        <weight>2620</weight>
+        <o_60_mph>14.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Dodge Aspen 6</name>
+        <economy>20.6</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>110</power>
+        <weight>3360</weight>
+        <o_60_mph>16.6</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Dodge Aspen SE</name>
+        <economy>20</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>100</power>
+        <weight>3651</weight>
+        <o_60_mph>17.7</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Dodge Aspen</name>
+        <economy>18.6</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>110</power>
+        <weight>3620</weight>
+        <o_60_mph>18.7</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Dodge Aspen</name>
+        <economy>19.1</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>90</power>
+        <weight>3381</weight>
+        <o_60_mph>18.7</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Dodge Challenger SE</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>383</displacement>
+        <power>170</power>
+        <weight>3563</weight>
+        <o_60_mph>10</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Dodge Charger 2.2</name>
+        <economy>36</economy>
+        <cylinders>4</cylinders>
+        <displacement>135</displacement>
+        <power>84</power>
+        <weight>2370</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Dodge Colt (Wagon)</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>80</power>
+        <weight>2164</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Dodge Colt Hardtop</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>97.5</displacement>
+        <power>80</power>
+        <weight>2126</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Dodge Colt Hatchback Custom</name>
+        <economy>35.7</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>80</power>
+        <weight>1915</weight>
+        <o_60_mph>14.4</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Dodge Colt M/M</name>
+        <economy>33.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>83</power>
+        <weight>2075</weight>
+        <o_60_mph>15.9</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Dodge Colt</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>79</power>
+        <weight>2255</weight>
+        <o_60_mph>17.7</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Dodge Colt</name>
+        <economy>27.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>156</displacement>
+        <power>105</power>
+        <weight>2800</weight>
+        <o_60_mph>14.4</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Dodge Colt</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>75</power>
+        <weight>2125</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Dodge Coronet Brougham</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4190</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Dodge Coronet Custom (Wagon)</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4457</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Dodge Coronet Custom</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>3777</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Dodge D100</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>3755</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Dodge D200</name>
+        <economy>11</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>210</power>
+        <weight>4382</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Dodge Dart Custom</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>3399</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Dodge Diplomat</name>
+        <economy>19.4</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>140</power>
+        <weight>3735</weight>
+        <o_60_mph>13.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Dodge Magnum XE</name>
+        <economy>17.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>140</power>
+        <weight>4080</weight>
+        <o_60_mph>13.7</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Dodge Monaco (Wagon)</name>
+        <economy>12</economy>
+        <cylinders>8</cylinders>
+        <displacement>383</displacement>
+        <power>180</power>
+        <weight>4955</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Dodge Monaco Brougham</name>
+        <economy>15.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>145</power>
+        <weight>4140</weight>
+        <o_60_mph>13.7</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Dodge Omni</name>
+        <economy>30.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>75</power>
+        <weight>2230</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Dodge Rampage</name>
+        <economy>32</economy>
+        <cylinders>4</cylinders>
+        <displacement>135</displacement>
+        <power>84</power>
+        <weight>2295</weight>
+        <o_60_mph>11.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Dodge St. Regis</name>
+        <economy>18.2</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>135</power>
+        <weight>3830</weight>
+        <o_60_mph>15.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Fiat 124 Sport Coupe</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>90</power>
+        <weight>2265</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Fiat 124 TC</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>116</displacement>
+        <power>75</power>
+        <weight>2246</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Fiat 124B</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>88</displacement>
+        <power>76</power>
+        <weight>2065</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Fiat 128</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>75</power>
+        <weight>2108</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Fiat 128</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>68</displacement>
+        <power>49</power>
+        <weight>1867</weight>
+        <o_60_mph>19.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Fiat 131</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>107</displacement>
+        <power>86</power>
+        <weight>2464</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Fiat Strada Custom</name>
+        <economy>37.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>69</power>
+        <weight>2130</weight>
+        <o_60_mph>14.7</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Fiat X1.9</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>79</displacement>
+        <power>67</power>
+        <weight>2000</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Ford Capri II</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>92</power>
+        <weight>2572</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Ford Country Squire (Wagon)</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>170</power>
+        <weight>4746</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Ford Country Squire (Wagon)</name>
+        <economy>15.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>142</power>
+        <weight>4054</weight>
+        <o_60_mph>14.3</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Ford Country</name>
+        <economy>12</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>167</power>
+        <weight>4906</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Ford Escort 2H</name>
+        <economy>29.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>65</power>
+        <weight>2380</weight>
+        <o_60_mph>20.7</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Ford Escort 4W</name>
+        <economy>34.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>65</power>
+        <weight>2045</weight>
+        <o_60_mph>16.2</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Ford F108</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>130</power>
+        <weight>3870</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Ford F250</name>
+        <economy>10</economy>
+        <cylinders>8</cylinders>
+        <displacement>360</displacement>
+        <power>215</power>
+        <weight>4615</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Ford Fairmont (Auto)</name>
+        <economy>20.2</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>85</power>
+        <weight>2965</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Ford Fairmont (Man)</name>
+        <economy>25.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>88</power>
+        <weight>2720</weight>
+        <o_60_mph>15.4</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Ford Fairmont 4</name>
+        <economy>22.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>88</power>
+        <weight>2890</weight>
+        <o_60_mph>17.3</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Ford Fairmont Futura</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>92</power>
+        <weight>2865</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Ford Fairmont</name>
+        <economy>26.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>88</power>
+        <weight>2870</weight>
+        <o_60_mph>18.1</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Ford Fiesta</name>
+        <economy>36.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>66</power>
+        <weight>1800</weight>
+        <o_60_mph>14.4</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Ford Futura</name>
+        <economy>18.1</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>139</power>
+        <weight>3205</weight>
+        <o_60_mph>11.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Ford Galaxie 500</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>153</power>
+        <weight>4129</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Ford Galaxie 500</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>153</power>
+        <weight>4154</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Ford Galaxie 500</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>429</displacement>
+        <power>198</power>
+        <weight>4341</weight>
+        <o_60_mph>10</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Ford Gran Torino (Wagon)</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>140</power>
+        <weight>4294</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Ford Gran Torino (Wagon)</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>140</power>
+        <weight>4638</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Ford Gran Torino</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>137</power>
+        <weight>4042</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Ford Gran Torino</name>
+        <economy>14.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>152</power>
+        <weight>4215</weight>
+        <o_60_mph>12.8</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Ford Gran Torino</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>140</power>
+        <weight>4141</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Ford Granada Ghia</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>78</power>
+        <weight>3574</weight>
+        <o_60_mph>21</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Ford Granada GL</name>
+        <economy>20.2</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>88</power>
+        <weight>3060</weight>
+        <o_60_mph>17.1</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Ford Granada L</name>
+        <economy>22</economy>
+        <cylinders>6</cylinders>
+        <displacement>232</displacement>
+        <power>112</power>
+        <weight>2835</weight>
+        <o_60_mph>14.7</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Ford Granada</name>
+        <economy>18.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>98</power>
+        <weight>3525</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Ford LTD Landau</name>
+        <economy>17.6</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>129</power>
+        <weight>3725</weight>
+        <o_60_mph>13.4</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Ford LTD</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>158</power>
+        <weight>4363</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Ford LTD</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>148</power>
+        <weight>4657</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Ford Maverick</name>
+        <economy>15</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>72</power>
+        <weight>3158</weight>
+        <o_60_mph>19.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Ford Maverick</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>88</power>
+        <weight>3021</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Ford Maverick</name>
+        <economy>21</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power></power>
+        <weight>2875</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Ford Maverick</name>
+        <economy>21</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>85</power>
+        <weight>2587</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Ford Maverick</name>
+        <economy>24</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>81</power>
+        <weight>3012</weight>
+        <o_60_mph>17.6</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Ford Mustang Boss 302</name>
+        <economy></economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>140</power>
+        <weight>3353</weight>
+        <o_60_mph>8</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Ford Mustang Cobra</name>
+        <economy>23.6</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power></power>
+        <weight>2905</weight>
+        <o_60_mph>14.3</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Ford Mustang GL</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>86</power>
+        <weight>2790</weight>
+        <o_60_mph>15.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Ford Mustang II 2+2</name>
+        <economy>25.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>89</power>
+        <weight>2755</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Ford Mustang II</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>129</power>
+        <weight>3169</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Ford Mustang</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>88</power>
+        <weight>3139</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Ford Pinto (Wagon)</name>
+        <economy>22</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>86</power>
+        <weight>2395</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Ford Pinto Runabout</name>
+        <economy>21</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>86</power>
+        <weight>2226</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Ford Pinto</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>171</displacement>
+        <power>97</power>
+        <weight>2984</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Ford Pinto</name>
+        <economy>19</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>85</power>
+        <weight>2310</weight>
+        <o_60_mph>18.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Ford Pinto</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>83</power>
+        <weight>2639</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Ford Pinto</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power></power>
+        <weight>2046</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Ford Pinto</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>80</power>
+        <weight>2451</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Ford Pinto</name>
+        <economy>26.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>72</power>
+        <weight>2565</weight>
+        <o_60_mph>13.6</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Ford Ranger</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>79</power>
+        <weight>2625</weight>
+        <o_60_mph>18.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Ford Thunderbird</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>149</power>
+        <weight>4335</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Ford Torino (Wagon)</name>
+        <economy></economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>153</power>
+        <weight>4034</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Ford Torino 500</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>88</power>
+        <weight>3302</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Ford Torino</name>
+        <economy>17</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>140</power>
+        <weight>3449</weight>
+        <o_60_mph>10.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Hi 1200D</name>
+        <economy>9</economy>
+        <cylinders>8</cylinders>
+        <displacement>304</displacement>
+        <power>193</power>
+        <weight>4732</weight>
+        <o_60_mph>18.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Honda Accord CVCC</name>
+        <economy>31.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>68</power>
+        <weight>2045</weight>
+        <o_60_mph>18.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Honda Accord LX</name>
+        <economy>29.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>68</power>
+        <weight>2135</weight>
+        <o_60_mph>16.6</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Honda Accord</name>
+        <economy>32.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>107</displacement>
+        <power>72</power>
+        <weight>2290</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Honda Accord</name>
+        <economy>36</economy>
+        <cylinders>4</cylinders>
+        <displacement>107</displacement>
+        <power>75</power>
+        <weight>2205</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Honda Civic (Auto)</name>
+        <economy>32</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>67</power>
+        <weight>1965</weight>
+        <o_60_mph>15.7</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Honda Civic 1300</name>
+        <economy>35.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>81</displacement>
+        <power>60</power>
+        <weight>1760</weight>
+        <o_60_mph>16.1</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Honda Civic 1500 GL</name>
+        <economy>44.6</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>67</power>
+        <weight>1850</weight>
+        <o_60_mph>13.8</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Honda Civic CVCC</name>
+        <economy>33</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>53</power>
+        <weight>1795</weight>
+        <o_60_mph>17.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Honda Civic CVCC</name>
+        <economy>36.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>60</power>
+        <weight>1800</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Honda Civic</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>97</power>
+        <weight>2489</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Honda Civic</name>
+        <economy>33</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>53</power>
+        <weight>1795</weight>
+        <o_60_mph>17.4</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Honda Civic</name>
+        <economy>38</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>67</power>
+        <weight>1965</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Honda Prelude</name>
+        <economy>33.7</economy>
+        <cylinders>4</cylinders>
+        <displacement>107</displacement>
+        <power>75</power>
+        <weight>2210</weight>
+        <o_60_mph>14.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Maxda GLC Deluxe</name>
+        <economy>34.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>86</displacement>
+        <power>65</power>
+        <weight>1975</weight>
+        <o_60_mph>15.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Maxda RX-3</name>
+        <economy>18</economy>
+        <cylinders>3</cylinders>
+        <displacement>70</displacement>
+        <power>90</power>
+        <weight>2124</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Mazda 626</name>
+        <economy>31.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>75</power>
+        <weight>2542</weight>
+        <o_60_mph>17.5</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Mazda 626</name>
+        <economy>31.6</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>74</power>
+        <weight>2635</weight>
+        <o_60_mph>18.3</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Mazda GLC 4</name>
+        <economy>34.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>68</power>
+        <weight>1985</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Mazda GLC Custom L</name>
+        <economy>37</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>68</power>
+        <weight>2025</weight>
+        <o_60_mph>18.2</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Mazda GLC Custom</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>68</power>
+        <weight>1970</weight>
+        <o_60_mph>17.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Mazda GLC Deluxe</name>
+        <economy>32.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>78</displacement>
+        <power>52</power>
+        <weight>1985</weight>
+        <o_60_mph>19.4</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Mazda GLC</name>
+        <economy>46.6</economy>
+        <cylinders>4</cylinders>
+        <displacement>86</displacement>
+        <power>65</power>
+        <weight>2110</weight>
+        <o_60_mph>17.9</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Mazda RX-2 Coupe</name>
+        <economy>19</economy>
+        <cylinders>3</cylinders>
+        <displacement>70</displacement>
+        <power>97</power>
+        <weight>2330</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Mazda RX-4</name>
+        <economy>21.5</economy>
+        <cylinders>3</cylinders>
+        <displacement>80</displacement>
+        <power>110</power>
+        <weight>2720</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Mazda RX-7 Gs</name>
+        <economy>23.7</economy>
+        <cylinders>3</cylinders>
+        <displacement>70</displacement>
+        <power>100</power>
+        <weight>2420</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Mercedes-Benz 240D</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>146</displacement>
+        <power>67</power>
+        <weight>3250</weight>
+        <o_60_mph>21.8</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Mercedes-Benz 280S</name>
+        <economy>16.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>168</displacement>
+        <power>120</power>
+        <weight>3820</weight>
+        <o_60_mph>16.7</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Mercedes-Benz 300D</name>
+        <economy>25.4</economy>
+        <cylinders>5</cylinders>
+        <displacement>183</displacement>
+        <power>77</power>
+        <weight>3530</weight>
+        <o_60_mph>20.1</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Mercury Capri 2000</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>86</power>
+        <weight>2220</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Mercury Capri V6</name>
+        <economy>21</economy>
+        <cylinders>6</cylinders>
+        <displacement>155</displacement>
+        <power>107</power>
+        <weight>2472</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Mercury Cougar Brougham</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>130</power>
+        <weight>4295</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Mercury Grand Marquis</name>
+        <economy>16.5</economy>
+        <cylinders>8</cylinders>
+        <displacement>351</displacement>
+        <power>138</power>
+        <weight>3955</weight>
+        <o_60_mph>13.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Mercury Lynx L</name>
+        <economy>36</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>70</power>
+        <weight>2125</weight>
+        <o_60_mph>17.3</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Mercury Marquis Brougham</name>
+        <economy>12</economy>
+        <cylinders>8</cylinders>
+        <displacement>429</displacement>
+        <power>198</power>
+        <weight>4952</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Mercury Marquis</name>
+        <economy>11</economy>
+        <cylinders>8</cylinders>
+        <displacement>429</displacement>
+        <power>208</power>
+        <weight>4633</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Mercury Monarch Ghia</name>
+        <economy>20.2</economy>
+        <cylinders>8</cylinders>
+        <displacement>302</displacement>
+        <power>139</power>
+        <weight>3570</weight>
+        <o_60_mph>12.8</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Mercury Monarch</name>
+        <economy>15</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>72</power>
+        <weight>3432</weight>
+        <o_60_mph>21</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Mercury Zephyr 6</name>
+        <economy>19.8</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>85</power>
+        <weight>2990</weight>
+        <o_60_mph>18.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Mercury Zephyr</name>
+        <economy>20.8</economy>
+        <cylinders>6</cylinders>
+        <displacement>200</displacement>
+        <power>85</power>
+        <weight>3070</weight>
+        <o_60_mph>16.7</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Nissan Stanza XE</name>
+        <economy>36</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>88</power>
+        <weight>2160</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Oldsmobile Cutlass Ciera (Diesel)</name>
+        <economy>38</economy>
+        <cylinders>6</cylinders>
+        <displacement>262</displacement>
+        <power>85</power>
+        <weight>3015</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Oldsmobile Cutlass LS</name>
+        <economy>26.6</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>105</power>
+        <weight>3725</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Oldsmobile Cutlass Salon Brougham</name>
+        <economy>19.9</economy>
+        <cylinders>8</cylinders>
+        <displacement>260</displacement>
+        <power>110</power>
+        <weight>3365</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Oldsmobile Cutlass Salon Brougham</name>
+        <economy>23.9</economy>
+        <cylinders>8</cylinders>
+        <displacement>260</displacement>
+        <power>90</power>
+        <weight>3420</weight>
+        <o_60_mph>22.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Oldsmobile Cutlass Supreme</name>
+        <economy>17</economy>
+        <cylinders>8</cylinders>
+        <displacement>260</displacement>
+        <power>110</power>
+        <weight>4060</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Oldsmobile Delta 88 Royale</name>
+        <economy>12</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>160</power>
+        <weight>4456</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Oldsmobile Omega Brougham</name>
+        <economy>26.8</economy>
+        <cylinders>6</cylinders>
+        <displacement>173</displacement>
+        <power>115</power>
+        <weight>2700</weight>
+        <o_60_mph>12.9</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Oldsmobile Omega</name>
+        <economy>11</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>180</power>
+        <weight>3664</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Oldsmobile Starfire SX</name>
+        <economy>23.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>85</power>
+        <weight>2855</weight>
+        <o_60_mph>17.6</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Oldsmobile Vista Cruiser</name>
+        <economy>12</economy>
+        <cylinders>8</cylinders>
+        <displacement>350</displacement>
+        <power>180</power>
+        <weight>4499</weight>
+        <o_60_mph>12.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Opel 1900</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>116</displacement>
+        <power>81</power>
+        <weight>2220</weight>
+        <o_60_mph>16.9</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Opel 1900</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>116</displacement>
+        <power>90</power>
+        <weight>2123</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Opel Manta</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>116</displacement>
+        <power>75</power>
+        <weight>2158</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Opel Manta</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>78</power>
+        <weight>2300</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Peugeot 304</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>79</displacement>
+        <power>70</power>
+        <weight>2074</weight>
+        <o_60_mph>19.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Peugeot 504 (Wagon)</name>
+        <economy>21</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>87</power>
+        <weight>2979</weight>
+        <o_60_mph>19.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Peugeot 504</name>
+        <economy>19</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>88</power>
+        <weight>3270</weight>
+        <o_60_mph>21.9</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Peugeot 504</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>88</power>
+        <weight>2957</weight>
+        <o_60_mph>17</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Peugeot 504</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>110</displacement>
+        <power>87</power>
+        <weight>2672</weight>
+        <o_60_mph>17.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Peugeot 504</name>
+        <economy>27.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>141</displacement>
+        <power>71</power>
+        <weight>3190</weight>
+        <o_60_mph>24.8</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Peugeot 505S Turbo Diesel</name>
+        <economy>28.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>141</displacement>
+        <power>80</power>
+        <weight>3230</weight>
+        <o_60_mph>20.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Peugeot 604SL</name>
+        <economy>16.2</economy>
+        <cylinders>6</cylinders>
+        <displacement>163</displacement>
+        <power>133</power>
+        <weight>3410</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Plymouth Arrow GS</name>
+        <economy>25.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>96</power>
+        <weight>2300</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Plymouth Barracuda 340</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>340</displacement>
+        <power>160</power>
+        <weight>3609</weight>
+        <o_60_mph>8</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Plymouth Champ</name>
+        <economy>39</economy>
+        <cylinders>4</cylinders>
+        <displacement>86</displacement>
+        <power>64</power>
+        <weight>1875</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Plymouth Cricket</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>91</displacement>
+        <power>70</power>
+        <weight>1955</weight>
+        <o_60_mph>20.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Plymouth Custom Suburb</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>360</displacement>
+        <power>170</power>
+        <weight>4654</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Plymouth Duster</name>
+        <economy>20</economy>
+        <cylinders>6</cylinders>
+        <displacement>198</displacement>
+        <power>95</power>
+        <weight>3102</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Plymouth Duster</name>
+        <economy>22</economy>
+        <cylinders>6</cylinders>
+        <displacement>198</displacement>
+        <power>95</power>
+        <weight>2833</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Plymouth Duster</name>
+        <economy>23</economy>
+        <cylinders>6</cylinders>
+        <displacement>198</displacement>
+        <power>95</power>
+        <weight>2904</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Plymouth Fury Gran Sedan</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4237</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Plymouth Fury III</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4096</weight>
+        <o_60_mph>13</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Plymouth Fury III</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>440</displacement>
+        <power>215</power>
+        <weight>4312</weight>
+        <o_60_mph>8.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Plymouth Fury III</name>
+        <economy>15</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4135</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Plymouth Fury</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>95</power>
+        <weight>3785</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Plymouth Grand Fury</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4498</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Plymouth Horizon 4</name>
+        <economy>34.7</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>63</power>
+        <weight>2215</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Plymouth Horizon Miser</name>
+        <economy>38</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>63</power>
+        <weight>2125</weight>
+        <o_60_mph>14.7</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Plymouth Horizon TC3</name>
+        <economy>34.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>70</power>
+        <weight>2150</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Plymouth Horizon</name>
+        <economy>34.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>70</power>
+        <weight>2200</weight>
+        <o_60_mph>13.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Plymouth Reliant</name>
+        <economy>27.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>135</displacement>
+        <power>84</power>
+        <weight>2490</weight>
+        <o_60_mph>15.7</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Plymouth Reliant</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>135</displacement>
+        <power>84</power>
+        <weight>2385</weight>
+        <o_60_mph>12.9</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Plymouth Sapporo</name>
+        <economy>23.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>156</displacement>
+        <power>105</power>
+        <weight>2745</weight>
+        <o_60_mph>16.7</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Plymouth Satellite (Wagon)</name>
+        <economy></economy>
+        <cylinders>8</cylinders>
+        <displacement>383</displacement>
+        <power>175</power>
+        <weight>4166</weight>
+        <o_60_mph>10.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Plymouth Satellite Custom (Wagon)</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>4077</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Plymouth Satellite Custom</name>
+        <economy>16</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>105</power>
+        <weight>3439</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Plymouth Satellite Sebring</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>105</power>
+        <weight>3613</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Plymouth Satellite</name>
+        <economy>18</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>3436</weight>
+        <o_60_mph>11</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Plymouth Valiant Custom</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>95</power>
+        <weight>3264</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Plymouth Valiant</name>
+        <economy>18</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>105</power>
+        <weight>3121</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Plymouth Valiant</name>
+        <economy>22</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>100</power>
+        <weight>3233</weight>
+        <o_60_mph>15.4</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Plymouth Volare Custom</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>100</power>
+        <weight>3630</weight>
+        <o_60_mph>17.7</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Plymouth Volare Premier V8</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>318</displacement>
+        <power>150</power>
+        <weight>3940</weight>
+        <o_60_mph>13.2</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Plymouth Volare</name>
+        <economy>20.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>225</displacement>
+        <power>100</power>
+        <weight>3430</weight>
+        <o_60_mph>17.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Pontiac Astro</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>140</displacement>
+        <power>78</power>
+        <weight>2592</weight>
+        <o_60_mph>18.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Pontiac Catalina Brougham</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>175</power>
+        <weight>4464</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Pontiac Catalina</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>175</power>
+        <weight>4385</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Pontiac Catalina</name>
+        <economy>14</economy>
+        <cylinders>8</cylinders>
+        <displacement>455</displacement>
+        <power>225</power>
+        <weight>4425</weight>
+        <o_60_mph>10</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Pontiac Catalina</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>170</power>
+        <weight>4668</weight>
+        <o_60_mph>11.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Pontiac Firebird</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>100</power>
+        <weight>3282</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Pontiac Grand Prix Lj</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>180</power>
+        <weight>4220</weight>
+        <o_60_mph>11.1</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Pontiac Grand Prix</name>
+        <economy>16</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>230</power>
+        <weight>4278</weight>
+        <o_60_mph>9.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Pontiac J2000 Se Hatchback</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>112</displacement>
+        <power>85</power>
+        <weight>2575</weight>
+        <o_60_mph>16.2</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Pontiac Lemans V6</name>
+        <economy>21.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>115</power>
+        <weight>3245</weight>
+        <o_60_mph>15.4</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Pontiac Phoenix LJ</name>
+        <economy>19.2</economy>
+        <cylinders>6</cylinders>
+        <displacement>231</displacement>
+        <power>105</power>
+        <weight>3535</weight>
+        <o_60_mph>19.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Pontiac Phoenix</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>90</power>
+        <weight>2735</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Pontiac Phoenix</name>
+        <economy>33.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>90</power>
+        <weight>2556</weight>
+        <o_60_mph>13.2</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Pontiac Safari (Wagon)</name>
+        <economy>13</economy>
+        <cylinders>8</cylinders>
+        <displacement>400</displacement>
+        <power>175</power>
+        <weight>5140</weight>
+        <o_60_mph>12</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Pontiac Sunbird Coupe</name>
+        <economy>24.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>151</displacement>
+        <power>88</power>
+        <weight>2740</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Pontiac Ventura Sj</name>
+        <economy>18.5</economy>
+        <cylinders>6</cylinders>
+        <displacement>250</displacement>
+        <power>110</power>
+        <weight>3645</weight>
+        <o_60_mph>16.2</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Renault 12 (Wagon)</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>96</displacement>
+        <power>69</power>
+        <weight>2189</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Renault 12TL</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>101</displacement>
+        <power>83</power>
+        <weight>2202</weight>
+        <o_60_mph>15.3</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Renault 18I</name>
+        <economy>34.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>100</displacement>
+        <power></power>
+        <weight>2320</weight>
+        <o_60_mph>15.8</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Renault 5 Gtl</name>
+        <economy>36</economy>
+        <cylinders>4</cylinders>
+        <displacement>79</displacement>
+        <power>58</power>
+        <weight>1825</weight>
+        <o_60_mph>18.6</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Renault Lecar Deluxe</name>
+        <economy>40.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>85</displacement>
+        <power></power>
+        <weight>1835</weight>
+        <o_60_mph>17.3</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Saab 900S</name>
+        <economy></economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>110</power>
+        <weight>2800</weight>
+        <o_60_mph>15.4</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Saab 99E</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>104</displacement>
+        <power>95</power>
+        <weight>2375</weight>
+        <o_60_mph>17.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Saab 99GLE</name>
+        <economy>21.6</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>115</power>
+        <weight>2795</weight>
+        <o_60_mph>15.7</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Saab 99LE</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>110</power>
+        <weight>2660</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Saab 99LE</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>115</power>
+        <weight>2671</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Subaru DL</name>
+        <economy>30</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>67</power>
+        <weight>1985</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Subaru DL</name>
+        <economy>33.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>67</power>
+        <weight>2145</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Subaru</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>108</displacement>
+        <power>93</power>
+        <weight>2391</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Subaru</name>
+        <economy>32.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>67</power>
+        <weight>2065</weight>
+        <o_60_mph>17.8</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Toyota Carina</name>
+        <economy>20</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>88</power>
+        <weight>2279</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Toyota Celica GT Liftback</name>
+        <economy>21.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>134</displacement>
+        <power>95</power>
+        <weight>2515</weight>
+        <o_60_mph>14.8</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Toyota Celica GT</name>
+        <economy>32</economy>
+        <cylinders>4</cylinders>
+        <displacement>144</displacement>
+        <power>96</power>
+        <weight>2665</weight>
+        <o_60_mph>13.9</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Toyota Corolla 1200</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>71</displacement>
+        <power>65</power>
+        <weight>1773</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Toyota Corolla 1200</name>
+        <economy>32</economy>
+        <cylinders>4</cylinders>
+        <displacement>71</displacement>
+        <power>65</power>
+        <weight>1836</weight>
+        <o_60_mph>21</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Toyota Corolla 1600 (Wagon)</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>88</power>
+        <weight>2100</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Toyota Corolla Liftback</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>75</power>
+        <weight>2265</weight>
+        <o_60_mph>18.2</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Toyota Corolla Tercel</name>
+        <economy>38.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>89</displacement>
+        <power>60</power>
+        <weight>1968</weight>
+        <o_60_mph>18.8</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Toyota Corolla</name>
+        <economy>28</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>75</power>
+        <weight>2155</weight>
+        <o_60_mph>16.4</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Toyota Corolla</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>75</power>
+        <weight>2171</weight>
+        <o_60_mph>16</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Toyota Corolla</name>
+        <economy>32.2</economy>
+        <cylinders>4</cylinders>
+        <displacement>108</displacement>
+        <power>75</power>
+        <weight>2265</weight>
+        <o_60_mph>15.2</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Toyota Corolla</name>
+        <economy>32.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>108</displacement>
+        <power>75</power>
+        <weight>2350</weight>
+        <o_60_mph>16.8</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Toyota Corolla</name>
+        <economy>34</economy>
+        <cylinders>4</cylinders>
+        <displacement>108</displacement>
+        <power>70</power>
+        <weight>2245</weight>
+        <o_60_mph>16.9</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Toyota Corona Hardtop</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>113</displacement>
+        <power>95</power>
+        <weight>2278</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Toyota Corona Liftback</name>
+        <economy>29.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>134</displacement>
+        <power>90</power>
+        <weight>2711</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Toyota Corona Mark II</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>113</displacement>
+        <power>95</power>
+        <weight>2372</weight>
+        <o_60_mph>15</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Toyota Corona</name>
+        <economy>24</economy>
+        <cylinders>4</cylinders>
+        <displacement>134</displacement>
+        <power>96</power>
+        <weight>2702</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Toyota Corona</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>113</displacement>
+        <power>95</power>
+        <weight>2228</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Toyota Corona</name>
+        <economy>27.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>134</displacement>
+        <power>95</power>
+        <weight>2560</weight>
+        <o_60_mph>14.2</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Toyota Corona</name>
+        <economy>31</economy>
+        <cylinders>4</cylinders>
+        <displacement>76</displacement>
+        <power>52</power>
+        <weight>1649</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Toyota Cressida</name>
+        <economy>25.4</economy>
+        <cylinders>6</cylinders>
+        <displacement>168</displacement>
+        <power>116</power>
+        <weight>2900</weight>
+        <o_60_mph>12.6</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Toyota Mark II</name>
+        <economy>19</economy>
+        <cylinders>6</cylinders>
+        <displacement>156</displacement>
+        <power>108</power>
+        <weight>2930</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Toyota Mark II</name>
+        <economy>20</economy>
+        <cylinders>6</cylinders>
+        <displacement>156</displacement>
+        <power>122</power>
+        <weight>2807</weight>
+        <o_60_mph>13.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Toyota Starlet</name>
+        <economy>39.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>79</displacement>
+        <power>58</power>
+        <weight>1755</weight>
+        <o_60_mph>16.9</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Toyota Tercel</name>
+        <economy>37.7</economy>
+        <cylinders>4</cylinders>
+        <displacement>89</displacement>
+        <power>62</power>
+        <weight>2050</weight>
+        <o_60_mph>17.3</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Toyouta Corona Mark II (Wagon)</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>120</displacement>
+        <power>97</power>
+        <weight>2506</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Triumph TR7 Coupe</name>
+        <economy>35</economy>
+        <cylinders>4</cylinders>
+        <displacement>122</displacement>
+        <power>88</power>
+        <weight>2500</weight>
+        <o_60_mph>15.1</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Vokswagen Rabbit</name>
+        <economy>29.8</economy>
+        <cylinders>4</cylinders>
+        <displacement>89</displacement>
+        <power>62</power>
+        <weight>1845</weight>
+        <o_60_mph>15.3</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Volkswagen 1131 Deluxe Sedan</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>46</power>
+        <weight>1835</weight>
+        <o_60_mph>20.5</o_60_mph>
+        <year>70</year>
+    </row>
+    <row>
+        <name>Volkswagen 411 (Wagon)</name>
+        <economy>22</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>76</power>
+        <weight>2511</weight>
+        <o_60_mph>18</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Volkswagen Dasher (Diesel)</name>
+        <economy>43.4</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>48</power>
+        <weight>2335</weight>
+        <o_60_mph>23.7</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Volkswagen Dasher</name>
+        <economy>25</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>71</power>
+        <weight>2223</weight>
+        <o_60_mph>16.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Volkswagen Dasher</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>79</displacement>
+        <power>67</power>
+        <weight>1963</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>74</year>
+    </row>
+    <row>
+        <name>Volkswagen Dasher</name>
+        <economy>30.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>78</power>
+        <weight>2190</weight>
+        <o_60_mph>14.1</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Volkswagen Jetta</name>
+        <economy>33</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>74</power>
+        <weight>2190</weight>
+        <o_60_mph>14.2</o_60_mph>
+        <year>81</year>
+    </row>
+    <row>
+        <name>Volkswagen Model 111</name>
+        <economy>27</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>60</power>
+        <weight>1834</weight>
+        <o_60_mph>19</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Volkswagen Pickup</name>
+        <economy>44</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>52</power>
+        <weight>2130</weight>
+        <o_60_mph>24.6</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit C (Diesel)</name>
+        <economy>44.3</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>48</power>
+        <weight>2085</weight>
+        <o_60_mph>21.7</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit Custom Diesel</name>
+        <economy>43.1</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>48</power>
+        <weight>1985</weight>
+        <o_60_mph>21.5</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit Custom</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>78</power>
+        <weight>1940</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>77</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit Custom</name>
+        <economy>31.9</economy>
+        <cylinders>4</cylinders>
+        <displacement>89</displacement>
+        <power>71</power>
+        <weight>1925</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>79</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit L</name>
+        <economy>36</economy>
+        <cylinders>4</cylinders>
+        <displacement>105</displacement>
+        <power>74</power>
+        <weight>1980</weight>
+        <o_60_mph>15.3</o_60_mph>
+        <year>82</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>70</power>
+        <weight>1937</weight>
+        <o_60_mph>14</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit</name>
+        <economy>29</economy>
+        <cylinders>4</cylinders>
+        <displacement>90</displacement>
+        <power>70</power>
+        <weight>1937</weight>
+        <o_60_mph>14.2</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit</name>
+        <economy>29.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>71</power>
+        <weight>1825</weight>
+        <o_60_mph>12.2</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Volkswagen Rabbit</name>
+        <economy>41.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>98</displacement>
+        <power>76</power>
+        <weight>2144</weight>
+        <o_60_mph>14.7</o_60_mph>
+        <year>80</year>
+    </row>
+    <row>
+        <name>Volkswagen Scirocco</name>
+        <economy>31.5</economy>
+        <cylinders>4</cylinders>
+        <displacement>89</displacement>
+        <power>71</power>
+        <weight>1990</weight>
+        <o_60_mph>14.9</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Volkswagen Super Beetle 117</name>
+        <economy></economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>48</power>
+        <weight>1978</weight>
+        <o_60_mph>20</o_60_mph>
+        <year>71</year>
+    </row>
+    <row>
+        <name>Volkswagen Super Beetle</name>
+        <economy>26</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>46</power>
+        <weight>1950</weight>
+        <o_60_mph>21</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Volkswagen Type 3</name>
+        <economy>23</economy>
+        <cylinders>4</cylinders>
+        <displacement>97</displacement>
+        <power>54</power>
+        <weight>2254</weight>
+        <o_60_mph>23.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Volvo 144EA</name>
+        <economy>19</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>112</power>
+        <weight>2868</weight>
+        <o_60_mph>15.5</o_60_mph>
+        <year>73</year>
+    </row>
+    <row>
+        <name>Volvo 145E (Wagon)</name>
+        <economy>18</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>112</power>
+        <weight>2933</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>72</year>
+    </row>
+    <row>
+        <name>Volvo 244DL</name>
+        <economy>22</economy>
+        <cylinders>4</cylinders>
+        <displacement>121</displacement>
+        <power>98</power>
+        <weight>2945</weight>
+        <o_60_mph>14.5</o_60_mph>
+        <year>75</year>
+    </row>
+    <row>
+        <name>Volvo 245</name>
+        <economy>20</economy>
+        <cylinders>4</cylinders>
+        <displacement>130</displacement>
+        <power>102</power>
+        <weight>3150</weight>
+        <o_60_mph>15.7</o_60_mph>
+        <year>76</year>
+    </row>
+    <row>
+        <name>Volvo 264GL</name>
+        <economy>17</economy>
+        <cylinders>6</cylinders>
+        <displacement>163</displacement>
+        <power>125</power>
+        <weight>3140</weight>
+        <o_60_mph>13.6</o_60_mph>
+        <year>78</year>
+    </row>
+    <row>
+        <name>Volvo Diesel</name>
+        <economy>30.7</economy>
+        <cylinders>6</cylinders>
+        <displacement>145</displacement>
+        <power>76</power>
+        <weight>3160</weight>
+        <o_60_mph>19.6</o_60_mph>
+        <year>81</year>
+    </row>
+</root>

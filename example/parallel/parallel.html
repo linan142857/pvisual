@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>parallel</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var parallel = pvisual.model.parallel();
+    parallel.axisPathColor('#777777')
+    .lineColor('pink')
+    .size(1000, 400)
+    .sizeAvail(850, 300);
+    parallel.csv('parallel.csv', function(d) {
+        parallel.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>circlepacking</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var circlepacking = pvisual.model.circlepacking();
+    circlepacking.size(800, 800).sizeAvail(750, 750);
+    circlepacking.json('circlepacking.json', function(d) {
+        circlepacking.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>
