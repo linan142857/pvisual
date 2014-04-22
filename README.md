@@ -10,8 +10,8 @@
 
 ### For Example:
 
-<img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" align="left" width="250px" height="250px" hspace="100px"/>
-<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" align="left" width="250px" height="250px" hspace="100px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" align="left" width="200px" height="200px" hspace="100px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" width="200px" height="200px" hspace="100px"/>
 
 
 ## Install
