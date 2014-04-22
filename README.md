@@ -7,6 +7,8 @@
 - [API文档](http://pvisualjs.sinaapp.com/api.html)
 - [样例](http://pvisualjs.sinaapp.com/example.html)
 
+___
+
 ### For Example:
 
 <img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" style="width:200px;margin-left:100px"/>
