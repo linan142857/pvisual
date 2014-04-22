@@ -10,8 +10,8 @@
 
 ### For Example:
 
-<img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" align="left" width="200px" height="200px" hspace="100px"/>
-<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" width="200px" height="200px" hspace="100px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" align="left" width="230px" height="230px" hspace="80px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" width="230px" height="230px" hspace="80px"/>
 
 
 ## Install
@@ -43,6 +43,6 @@ Pvisual.js 遵循开源协议 [MIT License](https://github.com/linan142857/pvisu
 ## Contact
 
 BUPTSSE · 创新项目“UGC数据分析与可视化开源web工具的研究” 创新小组制作
-有问题可咨询：
+有问题可咨询：  
 lyl(shuixuling@gmail.com)
 如有疑问，或发现Bug，也可[提交Bug](https://github.com/linan142857pviuals/issues/new)
