@@ -18,7 +18,7 @@
 ```bash
 $ git clone git://github.com/linan142857/pvisual.git
 ```
-需要注意的是 [example](https://github.com/TBEDP/datavjs/tree/master/example) 目录下的例子中有 `ajax` 存在，所以你需要一个服务器来托管这些静态文件。
+需要注意的是 [example](https://github.com/linan142857/pvisual/tree/master/example) 目录下的例子中有 `ajax` 存在，所以你需要一个服务器来托管这些静态文件。
 如果您的computer中装有python，可以键入下面命令在搭建简单的服务器
 ```python
 $ python simpleHTTPserver -m 8000 
