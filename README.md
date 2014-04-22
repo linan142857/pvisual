@@ -8,7 +8,7 @@
 
 ### For Example:
 <img src="http://pvisualjs.sinaapp.com/img/main-page-graph.png" align="left" width="230px" height="230px" hspace="60px"/>
-<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" align="left" width="230px" height="230px" hspace="60px"/>
+<img src="http://pvisualjs.sinaapp.com/img/main-page-chord.png" width="230px" height="230px" hspace="60px"/>
 
 
 ## Install
