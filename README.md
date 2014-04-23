@@ -29,7 +29,7 @@ $ python simpleHTTPserver -m 8000
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 - [jsPDF](https://github.com/MrRio/jsPDF/)
 - [js-xls](https://github.com/SheetJS/js-xls/)
-- [js-xlxs](https://github.com/SheetJS/js-xlsx/)
+- [js-xlsx](https://github.com/SheetJS/js-xlsx/)
 
 ## License
 Pvisual 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/blob/master/LICENSE).
