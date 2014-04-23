@@ -29,7 +29,7 @@ $ python simpleHTTPserver -m 8000
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 - [jsPDF](https://github.com/MrRio/jsPDF/)
 - [js-xls](https://github.com/SheetJS/js-xls/)
-- [js-xlxs](https://github.com/SheetJS/js-xlxs/)
+- [js-xlxs](https://github.com/SheetJS/js-xlsx/)
 
 ## License
 Pvisual 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/blob/master/LICENSE).
@@ -37,6 +37,6 @@ Pvisual 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/
 ## Contact
 BUPTSSE · 创新项目“UGC数据分析与可视化开源web工具的研究” 创新小组制作
 有问题可咨询：  
-- lyl(shuixuling@gmail.com) 
+- Pvisual Team(shuixuling@gmail.com) 
 
 如有疑问，或发现Bug，也可[提交Bug](https://github.com/linan142857/pviuals/issues/new)
