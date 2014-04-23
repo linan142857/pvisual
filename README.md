@@ -23,13 +23,13 @@ $ python simpleHTTPserver -m 8000
 ```
 
 ## Requirements
-- [D3.js]("https://github.com/mbostock/d3")
+- [D3.js](https://github.com/mbostock/d3/)
 - [canvg.js](http://code.google.com/p/canvg/)
 - [rgbcolor.js](http://www.phpied.com/rgb-color-parser-in-javascript/)
-- [FileSaver.js](https://github.com/eligrey/FileSaver.js)
-- [jsPDF](https://github.com/MrRio/jsPDF)
-- [js-xls](https://github.com/SheetJS/js-xls)
-- [js-xlxs](https://github.com/SheetJS/js-xlxs)
+- [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+- [jsPDF](https://github.com/MrRio/jsPDF/)
+- [js-xls](https://github.com/SheetJS/js-xls/)
+- [js-xlxs](https://github.com/SheetJS/js-xlxs/)
 
 ## License
 Pvisual 遵循开源协议 [MIT License](https://github.com/linan142857/pvisual/blob/master/LICENSE).
