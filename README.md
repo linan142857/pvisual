@@ -39,4 +39,4 @@ BUPTSSE · 创新项目“UGC数据分析与可视化开源web工具的研究”
 有问题可咨询：  
 - Pvisual Team(shuixuling@gmail.com) 
 
-如有疑问，或发现Bug，也可[提交Bug](https://github.com/linan142857/pviuals/issues/new)
+如有疑问，或发现Bug，也可[提交Bug](https://github.com/linan142857/pvisual/issues/new)
