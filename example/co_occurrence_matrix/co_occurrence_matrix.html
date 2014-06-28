@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>co_occurrence_matrix</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <script src='../deps/lib.js'></script>
+    <script src="../deps/pvisual.v1.min.js"></script>
+    <style>
+    .chart, svg{
+        float: left;
+    }
+    textarea{
+        margin-top: 50px;
+        margin-left: 30px;
+        width: 500px;
+        height: 500px;
+    }
+    </style>
+</head>
+<body>
+    <div id="Chart"></div>
+    <script>
+    var co_occurrence_matrix = pvisual.model.co_occurrence_matrix();
+    co_occurrence_matrix.json('miserables.json', function(d) {
+        co_occurrence_matrix.data(d).render('div#Chart');
+    });
+    </script>
+</body>
+</html>

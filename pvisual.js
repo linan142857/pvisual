@@ -47,9 +47,17 @@
  * 新增图形样式combo
  */
 
+// ==========================================
+
+/*
+ * 2014-05-18(v0.0.6-alpha)
+ * 新增图形样式co_occurrence_matrix
+ */
+
+
 (function(_) {
     'use strict';
-    
+
     /**
      * 基础库支持
      */
@@ -3643,11 +3651,11 @@
             } else
                 return data;
         };
-        
+
         combo.getType = function() {
             return type;
         };
-        
+
         combo.render = function(_) {
             /* 获取外层的标签 */
             div = div || d3.select(_).node();
@@ -3824,7 +3832,7 @@
             legendUpdate(legends);
             legendDraw(legends);
         };
-        
+
         function lineDraw(lines, line, x0, y, source) {
             lines.enter()
                     .append('svg:path')
@@ -4173,7 +4181,7 @@
                                 .attr({x: 10, y: 5})
                                 .style({'text-anchor': 'end',
                                     'font-family': fontFamily,
-                                    'font-size': pieFontSize,
+                                    'font-size': pieFontSize
                                 })
                                 .text(d);
                         d3.select(this)
@@ -5090,8 +5098,6 @@
         /************局部变量***************/
         var source;
         var floatTag; // 活动标签
-        var div; // 外层div
-        var svg; // 外层svg
         var padding = .01;
         var symmetry = true;
         var dimensions;
@@ -5223,6 +5229,7 @@
             });
 
             g = d3.select(svg).select('g');
+
             var chords = g.select('.chords').
                     selectAll('path')
                     .data(layout.chords);
@@ -6510,6 +6517,618 @@
         return circlepacking;
     };
     /**
+     * 贡献矩阵
+     * @returns {_L5.pvisual.extend.sub|Window|Object}
+     */
+    pvisual.model.co_occurrence_matrix = function() {
+        var co_occurrence_matrix = pvisual.extend(); //主函數
+        var d3 = _.d3; // d3
+        /************全局变量***************/
+        var type = '共现矩阵'; //类型
+        var width = 800; // 宽度
+        var height = 800; // 高度
+        var widthAvail = width - 100; // 实际利用宽度
+        var heightAvail = height - 100; // 实际利用高度
+        var tranX = 99; //图形右移距离
+        var tranY = 99; //图形下移距离
+        var data; //数据
+        var floatTag; // 活动标签
+        var fontSize = 8; //字体大小
+        var fontColor = '#000000'; //颜色
+        var fontFamily = 'sans-serif'; // 字体样式
+        var div; // 外层div
+        var svg; // 外层svg
+        var duration = 2000; // 变化时间
+        var format = d3.format('s');
+        var color = co_occurrence_matrix.color();
+
+        /************局部变量***************/
+        var gradientColor = ['#00FF00', '#ff0000'];
+        var max;
+        var min;
+        var orders;
+
+        co_occurrence_matrix.data = function(_) {
+            if (arguments.length) {
+                if (_.type === 'xml') {
+                    _ = _.root;
+                    _ = XMLdata(_);
+                }
+                var index = d3.map();
+                _.nodes.forEach(function(d, i) {
+                    d.index = i;
+                    d.links = d3.range(_.nodes.length).map(function(j) {
+                        return {index: j, value: null};
+                    });
+                    d.links[i].value = -1;
+                    index.set(d.name, d);
+                });
+                max = -Infinity;
+                min = Infinity;
+                _.links.forEach(function(d) {
+                    var source = index.get(d.source);
+                    var target = index.get(d.target);
+                    if (source && target) {
+                        max = Math.max(max, d.value);
+                        min = Math.min(min, d.value);
+                        source.links[target.index].value = d.value;
+                        target.links[source.index].value = d.value;
+                    }
+                });
+                data = _.nodes;
+                data.index = index;
+                window.data = _;
+                return this;
+            } else
+                return data;
+        };
+
+        co_occurrence_matrix.getType = function() {
+            return type;
+        };
+
+        co_occurrence_matrix.render = function(_) {
+            /* 获取外层的标签 */
+            co_occurrence_matrix.div = div = div || d3.select(_).node();
+            if (!div || div.tagName.toLowerCase() !== 'div') {
+                alert('The argument(element) in graph.rander(_) should be <div> element');
+            }
+            d3.select(div).classed('chart', true);
+            svg = svg || d3.select(div)
+                    .append('svg')
+                    .classed('co_occurrence_matrix', true)
+                    .node();
+
+            floatTag = d3.select(div)
+                    .select('.floatTag')
+                    .node() ?
+                    d3.select(div)
+                    .select('.floatTag') :
+                    co_occurrence_matrix.floatTag(div); //绘图元素的外容器，添加动态标签
+
+            var g = d3.select(svg)
+                    .attr({'width': width,
+                        'height': height})
+                    .selectAll('g')
+                    .data([1])
+                    .enter()
+                    .append('svg:g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+
+            g.call(function(selection) {
+                selection.append('rect')
+                        .classed('background', true);
+                selection.append('svg:g')
+                        .classed('rows', true);
+                selection.append('svg:g')
+                        .classed('columns', true);
+            });
+            g = d3.select(svg)
+                    .select('g');
+
+            g.select('.background')
+                    .attr({'width': widthAvail,
+                        'height': heightAvail,
+                        'fill': '#eee'});
+
+            var x = d3.scale.ordinal().rangeBands([0, widthAvail]);
+            var h = d3.scale.linear().domain([min, max]).range(gradientColor);
+
+            orders = {
+                name: d3.range(data.length).sort(function(a, b) {
+                    return d3.ascending(data[a].name, data[b].name);
+                }),
+                value: d3.range(data.length).sort(function(a, b) {
+                    return data[b].value - data[a].value;
+                }),
+                group: d3.range(data.length).sort(function(a, b) {
+                    return data[b].group - data[a].group;
+                })
+            };
+
+            this.orders = d3.keys(orders);
+            // 默认排序
+            x.domain(orders.name);
+
+            var rows = g.select('.rows')
+                    .selectAll('.row')
+                    .data(data);
+            rows.exit()
+                    .transition()
+                    .duration(duration)
+                    .style('opacity', 0)
+                    .remove();
+
+            rowsUpdate(rows, x, h);
+            rowsDraw(rows, x, h);
+
+            var columns = g.select('.columns')
+                    .selectAll('.column')
+                    .data(data);
+            columns.exit()
+                    .transition()
+                    .duration(500)
+                    .style('opacity', 0)
+                    .remove();
+
+            columnsUpdate(columns, x);
+            columnsDraw(columns, x);
+
+            this.makeOrder = function(value) {
+                x.domain(orders[value]);
+                var t = g.transition()
+                        .duration(duration);
+
+                t.selectAll('.row')
+                        .delay(function(d, i) {
+                            return x(i) * 4;
+                        })
+                        .attr('transform', function(d) {
+                            return 'translate(0,' + x(d.index) + ')';
+                        })
+                        .selectAll('.cell')
+                        .delay(function(d, i) {
+                            return x(i) * 4;
+                        })
+                        .attr('x', function(d) {
+                            return x(d.index);
+                        });
+
+                t.selectAll('.column')
+                        .delay(function(d, i) {
+                            return x(i) * 4;
+                        })
+                        .attr('transform', function(d) {
+                            return 'translate(' + x(d.index) + ')rotate(-90)';
+                        });
+            };
+            return co_occurrence_matrix;
+        };
+
+        function rowsUpdate(rows, x, h) {
+            rows.each(function(d) {
+                d3.select(this)
+                        .select('line')
+                        .transition()
+                        .duration(500)
+                        .attr('x2', widthAvail);
+
+                d3.select(this)
+                        .select('text')
+                        .attr('y', x.rangeBand() / 2)
+                        .transition()
+                        .duration(500)
+                        .style({'font-size': fontSize, 'font-family': fontFamily})
+                        .text(function(d) {
+                            return d.name;
+                        });
+
+                var cell = d3.select(this)
+                        .selectAll('.cell')
+                        .data(d.links.filter(function(p) {
+                            return p.value;
+                        }));
+
+                cell.exit()
+                        .transition()
+                        .duration(500)
+                        .style('opacity', 0)
+                        .remove();
+
+                cell.transition()
+                        .duration(500)
+                        .attr('width', x.rangeBand())
+                        .attr('height', x.rangeBand())
+                        .attr('fill', function(p) {
+                            return p.value === -1 ? color(p.value) : h(p.value);
+                        })
+                        .attr('x', function(p) {
+                            return x(p.index);
+                        });
+
+                cell.enter()
+                        .append('svg:rect')
+                        .classed('cell', true)
+                        .attr('width', x.rangeBand())
+                        .attr('height', x.rangeBand())
+                        .attr('fill', function(p) {
+                            return p.value === -1 ? color(p.value) : h(p.value);
+                        })
+                        .attr('x', function(p) {
+                            return x(p.index);
+                        })
+                        .on('mouseover', function(p) {
+                            d3.selectAll('.row text')
+                                    .attr('fill', function(k, i) {
+                                        return i === d.index ? '#ff0000' : null;
+                                    });
+                            d3.selectAll('.column text')
+                                    .attr('fill', function(k, i) {
+                                        return i === p.index ? '#ff0000' : null;
+                                    });
+                            drawLegend({value: p.value, color: h(p.value)}, true);
+                        })
+                        .on('mouseout', function() {
+                            d3.selectAll('text').attr('fill', 'null');
+                            drawLegend(null, false);
+                        });
+
+            }).transition()
+                    .duration(duration / 2)
+                    .delay(function(d, i) {
+                        return x(i) * 4;
+                    })
+                    .attr('transform', function(d) {
+                        return 'translate(0,' + x(d.index) + ')';
+                    });
+        }
+        function rowsDraw(rows, x, h) {
+            rows.enter()
+                    .append('svg:g')
+                    .classed('row', true)
+                    .attr('fill-opacity', 0)
+                    .each(function(d) {
+                        d3.select(this)
+                                .append('svg:line')
+                                .attr({'x2': widthAvail,
+                                    'stroke': '#fff'});
+
+                        d3.select(this)
+                                .append('svg:text')
+                                .attr('x', -6)
+                                .attr('y', x.rangeBand() / 2)
+                                .attr('dy', '.32em')
+                                .attr('text-anchor', 'end')
+                                .style({'font-size': fontSize, 'font-family': fontFamily})
+                                .text(function(d) {
+                                    return d.name;
+                                });
+                        d3.select(this)
+                                .selectAll('.cell')
+                                .data(d.links.filter(function(p) {
+                                    return p.value;
+                                }))
+                                .enter()
+                                .append('svg:rect')
+                                .classed('cell', true)
+                                .attr('width', x.rangeBand())
+                                .attr('height', x.rangeBand())
+                                .attr('fill', function(p) {
+                                    return p.value === -1 ? color(p.value) : h(p.value);
+                                })
+                                .attr('x', function(p) {
+                                    return x(p.index);
+                                })
+                                .on('mouseover', function(p) {
+                                    d3.selectAll('.row text')
+                                            .attr('fill', function(k, i) {
+                                                return i === d.index ? '#ff0000' : null;
+                                            });
+                                    d3.selectAll('.column text')
+                                            .attr('fill', function(k, i) {
+                                                return i === p.index ? '#ff0000' : null;
+                                            });
+                                    drawLegend({value: p.value, color: h(p.value)}, true);
+                                })
+                                .on('mouseout', function() {
+                                    d3.selectAll('text').attr('fill', 'null');
+                                    drawLegend(null, false);
+                                });
+                    })
+                    .transition()
+                    .duration(duration / 2)
+                    .delay(function(d, i) {
+                        return x(i) * 4;
+                    })
+                    .attr('fill-opacity', 1)
+                    .attr('transform', function(d) {
+                        return 'translate(0,' + x(d.index) + ')';
+                    });
+        }
+
+        function columnsUpdate(columns, x) {
+            columns.transition()
+                    .duration(500)
+                    .attr('transform', function(d) {
+                        return 'translate(' + x(d.index) + ')rotate(-90)';
+                    })
+                    .call(function(selection) {
+                        selection.select('line')
+                                .transition()
+                                .duration(500)
+                                .attr({'x1': -width,
+                                    'stroke': '#fff'});
+                        selection.select('text')
+                                .transition()
+                                .duration(500)
+                                .attr('y', x.rangeBand() / 2)
+                                .style({'font-size': fontSize, 'font-family': fontFamily})
+                                .text(function(d) {
+                                    return d.name;
+                                });
+                    });
+        }
+        function columnsDraw(columns, x) {
+            columns.enter()
+                    .append('svg:g')
+                    .classed('column', true)
+                    .attr('transform', function(d) {
+                        return 'translate(' + x(d.index) + ')rotate(-90)';
+                    })
+                    .call(function(selection) {
+                        selection.append('svg:line')
+                                .attr({'x1': -width,
+                                    'stroke': '#fff'});
+                        selection.append('svg:text')
+                                .attr('x', 6)
+                                .attr('y', x.rangeBand() / 2)
+                                .attr('dy', '.32em')
+                                .attr('text-anchor', 'start')
+                                .style({'font-size': fontSize, 'font-family': fontFamily})
+                                .text(function(d) {
+                                    return d.name;
+                                });
+                    });
+        }
+
+        function drawLegend(d, style) {
+            if (style) {
+                floatTag.style({
+                    'border-color': d.color,
+                    'opacity': 1,
+                    'textAlign': 'center',
+                    'margin': 'auto'
+                }).html('<span style="color:#3f7ed8; font-weight:bold; font-size:11px;margin-bottom:5px;">value: ' + format(d.value) + '</span>');
+            }
+            else {
+                floatTag.style('opacity', 0);
+            }
+        }
+
+        function XMLdata(d) {
+            if (typeof d === 'object' && d.constructor === Array) {
+                var nodes;
+                var links;
+                var value;
+                d.forEach(function(p) {
+                    if (p.nodes !== undefined) {
+                        var name;
+                        var group;
+                        nodes = p.nodes
+                                .nodes
+                                .map(function(k) {
+                                    k.node.node.forEach(function(q) {
+                                        if (q.name !== undefined)
+                                            name = q.name;
+                                        if (q.value !== undefined)
+                                            value = q.value;
+                                        if (q.group !== undefined)
+                                            group = q.group;
+                                    });
+                                    return {name: name,
+                                        value: value,
+                                        group: group};
+                                });
+                    } else if (p.links !== undefined) {
+                        var target;
+                        var source;
+                        var value;
+                        links = p.links
+                                .links
+                                .map(function(k) {
+                                    k.link.link.forEach(function(q) {
+                                        if (q.target !== undefined)
+                                            target = q.target;
+                                        if (q.source !== undefined)
+                                            source = q.source;
+                                        if (q.value !== undefined)
+                                            value = q.value;
+                                    });
+                                    return {source: source,
+                                        target: target,
+                                        value: value};
+                                });
+                    }
+                });
+                return {nodes: nodes, links: links};
+            }
+        }
+
+        co_occurrence_matrix.size = function(_) {
+            if (!arguments.length)
+                return [width, height];
+            else if (arguments.length !== 2
+                    || !isFinite(arguments[0])
+                    || !isFinite(arguments[1])) {
+                console.error('The argument(element) in co_occurrence_matrix.size(width, height) should be number and number of svg');
+                return this;
+            }
+            else {
+                width = arguments[0];
+                height = arguments[1];
+                return this;
+            }
+        };
+
+        co_occurrence_matrix.sizeAvail = function(_) {
+            if (!arguments.length)
+                return [widthAvail, heightAvail];
+            else if (arguments.length !== 2
+                    || !isFinite(arguments[0])
+                    || !isFinite(arguments[1])) {
+                console.error('The argument(element) in co_occurrence_matrix.sizeAvail(widthAvail, heightAvail) should be number and number of svg');
+                return this;
+            } else {
+                widthAvail = arguments[0];
+                heightAvail = arguments[1];
+                return this;
+            }
+        };
+
+        co_occurrence_matrix.tran = function(_) {
+            if (!arguments.length)
+                return [tranX, tranY];
+            else if (arguments.length !== 2
+                    || !isFinite(arguments[0])
+                    || !isFinite(arguments[1])) {
+                console.error('The argument(element) in co_occurrence_matrix.tran(tranX, tranY) should be number and number of svg');
+                return this;
+            }
+            else {
+                tranX = arguments[0];
+                tranY = arguments[1];
+                return this;
+            }
+        };
+
+        co_occurrence_matrix.fontSize = function(_) {
+            if (!arguments.length)
+                return fontSize;
+            else {
+                if (!isFinite(arguments[0])) {
+                    console.error('The arguments in co_occurrence_matrix.fontSize(fontSize) should be number of text');
+                    return this;
+                } else {
+                    fontSize = arguments[0];
+                    return this;
+                }
+            }
+        };
+
+        co_occurrence_matrix.fontFamily = function(_) {
+            if (!arguments.length)
+                return fontFamily;
+            else {
+                if (typeof arguments[0] !== 'string') {
+                    console.error('The arguments in co_occurrence_matrix.fontFamily(fontFamily) should be string of text');
+                    return this;
+                } else {
+                    fontSize = arguments[0];
+                    return this;
+                }
+            }
+        };
+
+        co_occurrence_matrix.duration = function(_) {
+            if (!arguments.length)
+                return duration;
+            else {
+                if (!isFinite(arguments[0])) {
+                    console.error('The arguments in co_occurrence_matrix.duration(duration) should be number of transition');
+                    return this;
+                } else {
+                    duration = Math.round(arguments[0]);
+                    return this;
+                }
+            }
+        };
+
+        co_occurrence_matrix.color = function(_) {
+            if (!arguments.length)
+                return color;
+            else {
+                if (typeof arguments[0] !== 'function') {
+                    console.error('The arguments in co_occurrence_matrix.color(color) should be function of pvisual.color');
+                    return this;
+                } else {
+                    color = arguments[0];
+                    return this;
+                }
+            }
+        };
+        co_occurrence_matrix.tickFormat = function(_) {
+            if (!arguments.length)
+                return format;
+            else {
+                if (typeof arguments[0] !== 'string') {
+                    console.error('The arguments in co_occurrence_matrix.tickFormat(format) should be string of d3.format');
+                    return this;
+                } else {
+                    format = d3.format(arguments[0]);
+                    return this;
+                }
+            }
+        };
+
+        co_occurrence_matrix.gradientColor = function(_) {
+            if (!arguments.length)
+                return gradientColor;
+            else if (arguments.length !== 2
+                    || typeof arguments[0] !== 'string'
+                    || typeof arguments[1] !== 'string') {
+                console.error('The argument(element) in co_occurrence_matrix.gradientColor(start, end) should be string and string of color');
+                return this;
+            }
+            else {
+                gradientColor[0] = arguments[0];
+                gradientColor[1] = arguments[1];
+                return this;
+            }
+        };
+
+        co_occurrence_matrix.options = function(_) {
+            if (!arguments.length)
+                return {
+                    'type': co_occurrence_matrix.getType(), 'width': width,
+                    'height': height,
+                    'widthAvail': widthAvail,
+                    'heightAvail': heightAvail,
+                    'tranX': tranX,
+                    'tranY': tranY,
+                    'format': format, 'fontSize': fontSize,
+                    'fontColor': fontColor,
+                    'fontFamily': fontFamily,
+                    'color': color,
+                    'duration': duration,
+                    'gradientColor': gradientColor
+                };
+            else if (typeof _ !== 'object') {
+                console.error('The arguments in co_occurrence_matrix.options(options) should be object');
+                return this;
+            } else {
+                width = isFinite(_.width) ? _.width : width;
+                height = isFinite(_.height) ? _.height : height;
+                widthAvail = isFinite(_.widthAvail) ? _.widthAvail : widthAvail;
+                heightAvail = isFinite(_.heightAvail) ? _.heightAvail : heightAvail;
+                tranX = isFinite(_.tranX) ? _.tranX : tranX;
+                tranY = isFinite(_.tranY) ? _.tranY : tranY;
+                _.format && co_occurrence_matrix.tickFormat(_.format);
+                _.fontFamily && co_occurrence_matrix.fontFamily(_.fontFamily);
+                isFinite(_.fontSize) && co_occurrence_matrix.fontSize(_.fontSize);
+                isFinite(_.duration) && co_occurrence_matrix.duration(_.duration);
+                typeof _.gradientColor === 'object'
+                        && _.gradientColor.constructor === Array
+                        && _.gradientColor.length === 2
+                        && co_occurrence_matrix.gradientColor(_.gradientColor[0], _.gradientColor[1]);
+                return this;
+            }
+        };
+
+        if (arguments.length === 1)
+            co_occurrence_matrix.options(arguments[0]);
+        return co_occurrence_matrix;
+    };
+    /**
      * 网络图
      * @returns {_L5.pvisual.extend.sub|Window|Object}
      */
@@ -6525,13 +7144,10 @@
         var tranX = 0; //图形右移距离
         var tranY = 0; //图形下移距离
         var data; //数据
-        var floatTag; // 活动标签
-        var div; // 外层div
-        var svg; // 外层svg
+        var floatTag; // 活动标签         var div; // 外层div         var svg; // 外层svg
         var duration = 500; // 变化时间
         var format = d3.format('s');
         var color = graph.color();
-        var clusterPadding = 20;
 
         /************局部变量***************/
         var dragHold = true;
@@ -6539,6 +7155,7 @@
         var theta = .8;
         var friction = .9;
         var charge = -250;
+        var clusterPadding = 20;
         var nodeSize = function(d, i) {
             return 5;
         };
@@ -6643,6 +7260,7 @@
                     .enter()
                     .append('svg:g')
                     .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+
             var brush = g.append('svg:g')
                     .datum(function() {
                         return {selected: false, previouslySelected: false};
@@ -6682,11 +7300,9 @@
             nodes.exit()
                     .transition()
                     .duration(duration)
-                    .style('opacity', 0)
-                    .remove();
+                    .style('opacity', 0).remove();
 
-            nodes.enter()
-                    .append('svg:circle')
+            nodes.enter().append('svg:circle')
                     .classed('node', true)
                     .on('mouseover', function(d) {
                         d3.select(this)
@@ -6707,21 +7323,20 @@
                                     }
                                 });
                         drawLegend(d, true, g);
-                    })
-                    .on('mouseout', function(d) {
-                        d3.select(this)
-                                .attr('r', nodeSize)
-                                .style('fill-opacity', 1)
-                                .style('fill', color(d.group));
-                        g.select('.links')
-                                .selectAll('.link')
-                                .filter(function(p) {
-                                    return p.source === d || p.target === d;
-                                })
-                                .style('stroke-width', linkWidth)
-                                .style('stroke', linkColor);
-                        drawLegend(d, false, g);
-                    });
+                    }).on('mouseout', function(d) {
+                d3.select(this)
+                        .attr('r', nodeSize)
+                        .style('fill-opacity', 1)
+                        .style('fill', color(d.group));
+                g.select('.links')
+                        .selectAll('.link')
+                        .filter(function(p) {
+                            return p.source === d || p.target === d;
+                        })
+                        .style('stroke-width', linkWidth)
+                        .style('stroke', linkColor);
+                drawLegend(d, false, g);
+            });
 
             nodes = g.selectAll('.node')
                     .attr('r', nodeSize)
@@ -6744,8 +7359,7 @@
 
             if (dragHold) {
                 brush.call(d3.svg.brush()
-                        .x(d3.scale.identity().domain([0, widthAvail - 5]))
-                        .y(d3.scale.identity().domain([0, heightAvail - 5]))
+                        .x(d3.scale.identity().domain([0, widthAvail - 5])).y(d3.scale.identity().domain([0, heightAvail - 5]))
                         .on('brushstart', function() {
                             nodes.each(function(d) {
                                 d.previouslySelected = shiftKey && d.selected;
@@ -6769,12 +7383,10 @@
                         }));
                 brush.select('.extent')
                         .style({'fill-opacity': .1,
-                            'stroke': '#FFFFFF',
-                            'shape-rendering': 'crispEdges'});
+                            'stroke': '#FFFFFF', 'shape-rendering': 'crispEdges'});
             } else {
                 d3.select(svg)
-                        .select('.brush')
-                        .remove();
+                        .select('.brush').remove();
                 nodes.call(force.drag);
             }
 
@@ -6924,8 +7536,7 @@
                     .gravity(gravity)
                     .theta(theta)
                     .linkDistance(80)
-                    .friction(friction)
-                    .size([widthAvail - 5, heightAvail - 5])
+                    .friction(friction).size([widthAvail - 5, heightAvail - 5])
                     .on('tick', tick)
                     .start();
 
@@ -6935,10 +7546,8 @@
                         'height': height})
                     .selectAll('g')
                     .data([1])
-                    .enter()
-                    .append('svg:g')
+                    .enter().append('svg:g')
                     .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
-
             g.call(function(selection) {
                 selection.append('svg:g')
                         .classed('links', true);
@@ -6960,9 +7569,7 @@
                     .style('opacity', 0)
                     .remove();
 
-            links.enter()
-                    .append('svg:line')
-                    .classed('link', true)
+            links.enter().append('svg:line').classed('link', true)
                     .style('stroke-width', linkWidth)
                     .style('stroke', linkColor);
 
@@ -6973,8 +7580,7 @@
 
             nodes.exit()
                     .transition()
-                    .duration(duration)
-                    .style('opacity', 0)
+                    .duration(duration).style('opacity', 0)
                     .remove();
 
             nodes.enter()
@@ -6989,16 +7595,14 @@
 
 
             var clusters = g.select('.clusters')
-                    .selectAll('.cluster')
-                    .data(nest);
+                    .selectAll('.cluster').data(nest);
             clusters.exit()
                     .transition()
                     .duration(duration)
                     .style('opacity', 0)
                     .remove();
             clusters.enter()
-                    .append('svg:circle')
-                    .classed('cluster', true)
+                    .append('svg:circle').classed('cluster', true)
                     .style('fill', 'none');
 
             // Resolves collisions between d and all other circles.
@@ -7454,7 +8058,6 @@
                 }
             }
         };
-
         graph.linkLightColorTarget = function(_) {
             if (!arguments.length)
                 return linkLightColorTarget;
@@ -7483,8 +8086,7 @@
                     'color': color,
                     'duration': duration,
                     'c': dragHold,
-                    'gravity': gravity,
-                    'theta': theta,
+                    'gravity': gravity, 'theta': theta,
                     'friction': friction,
                     'charge': charge,
                     'nodeSize': nodeSize,
@@ -7529,7 +8131,6 @@
                 return this;
             }
         };
-
         if (arguments.length === 1)
             graph.options(arguments[0]);
         return graph;
@@ -7547,8 +8148,7 @@
         var height = 400; // 高度
         var widthAvail = width - 200; // 实际利用宽度
         var heightAvail = height - 100; // 实际利用高度
-        var tranX = 50; //图形右移距离
-        var tranY = 0; //图形下移距离
+        var tranX = 50; //图形右移距离         var tranY = 0; //图形下移距离
         var data; //数据
         var fontFamily = 'Arial'; // 字体样式
         var floatTag; // 活动标签
@@ -7719,7 +8319,6 @@
 
             dimensionUpdate(dimensions, x0, x1, y);
             dimensionDraw(dimensions, x0, x1, y);
-
             var legends = g.select('.legends')
                     .attr('transform', 'translate(' + legendTranX + ',' + legendTranY + ')')
                     .selectAll('.legend')
@@ -7823,15 +8422,13 @@
                                     'width': x1.rangeBand()})
                                 .style('fill', function(p) {
                                     return color(p.name);
-                                })
-                                .on('mouseover', function(p) {
-                                    drawLegend(p, true);
-                                })
+                                }).on('mouseover', function(p) {
+                            drawLegend(p, true);
+                        })
                                 .on('mouseout', function(p) {
                                     drawLegend(p, false);
                                 })
-                                .transition()
-                                .duration(duration)
+                                .transition().duration(duration)
                                 .attr('y', function(p) {
                                     return y(p.y);
                                 })
@@ -7886,8 +8483,7 @@
                         d3.select(this)
                                 .append('svg:rect')
                                 .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                            widthAvail + 20,
-                                    'y': i % legendColumnNo * 20})
+                                            widthAvail + 20, 'y': i % legendColumnNo * 20})
                                 .attr({'width': 10,
                                     'height': 10})
                                 .style({'fill': color(i),
@@ -7923,8 +8519,7 @@
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
                         .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
-                            'y': i % legendColumnNo * 20});
+                                    widthAvail + 20, 'y': i % legendColumnNo * 20});
 
                 d3.select(this)
                         .selectAll('text')
@@ -7985,12 +8580,10 @@
                                 .style({'text-anchor': 'end',
                                     'font-family': fontFamily,
                                     'font-size': labelSize,
-                                    'fill': labelColor
-                                })
+                                    'fill': labelColor})
                                 .text(yLegend);
 
-                        d3.select(this)
-                                .selectAll('.label')
+                        d3.select(this).selectAll('.label')
                                 .data([1])
                                 .enter()
                                 .append('svg:text')
@@ -8001,8 +8594,7 @@
                                     'fill': labelColor
                                 })
                                 .attr({'transform': 'rotate(-90)',
-                                    'y': 8,
-                                    'dy': '.71em'})
+                                    'y': 8, 'dy': '.71em'})
                                 .text(yLegend);
 
                         d3.select(this)
@@ -8061,8 +8653,7 @@
                     'opacity': 1,
                     'textAlign': 'center',
                     'margin': 'auto'
-                })
-                        .html('name: ' + d.name + '<br/>value: ' + format(d.y));
+                }).html('name: ' + d.name + '<br/>value: ' + format(d.y));
             }
             else {
                 floatTag.style('opacity', 0);
@@ -8200,7 +8791,6 @@
                 }
             }
         };
-
         groupbar.yLegend = function(_) {
             if (!arguments.length)
                 return yLegend;
@@ -8370,7 +8960,6 @@
                 return this;
             }
         };
-
         groupbar.legendSize = function(_) {
             if (!arguments.length)
                 return legendSize;
@@ -8455,11 +9044,9 @@
                     'xtickLineLength': xtickLineLength,
                     'ytickLineLength': ytickLineLength,
                     'axisPathWidth': axisPathWidth,
-                    'axisPathColor': axisPathColor,
-                    'legendColor': legendColor,
+                    'axisPathColor': axisPathColor, 'legendColor': legendColor,
                     'legendSize': legendSize,
-                    'legendTranX': legendTranX,
-                    'legendTranY': legendTranY,
+                    'legendTranX': legendTranX, 'legendTranY': legendTranY,
                     'legendColumnNo': legendColumnNo,
                     'legendRowGap': legendRowGap
                 };
@@ -8500,7 +9087,6 @@
                 return this;
             }
         };
-
         if (arguments.length === 1)
             groupbar.options(arguments[0]);
         return groupbar;
@@ -8513,8 +9099,7 @@
         var heat = pvisual.extend(); //主函數
         var d3 = _.d3; // d3
         /************全局变量***************/
-        var type = '热点图'; //类型
-        var width = 800; // 宽度
+        var type = '热点图'; //类型         var width = 800; // 宽度
         var height = 400; // 高度
         var widthAvail = width - 150; // 实际利用宽度
         var heightAvail = height - 100; // 实际利用高度
@@ -8522,15 +9107,13 @@
         var tranY = 10; //图形下移距离
         var data; //数据
         var fontFamily = 'Arial'; // 字体样式
-        var floatTag; // 活动标签
-        var div; // 外层div
+        var floatTag; // 活动标签         var div; // 外层div
         var svg; // 外层svg
         var duration = 1000; // 变化时间
         var format = d3.format('s');
         var color = heat.color();
 
-        /************局部变量***************/
-        var padding = 0;
+        /************局部变量***************/         var padding = 0;
         var dimension;
         var gradientColor = ['white', 'steelblue'];
 
@@ -8646,8 +9229,7 @@
 
             var g = d3.select(svg)
                     .attr({'width': width,
-                        'height': height})
-                    .selectAll('g')
+                        'height': height}).selectAll('g')
                     .data([1])
                     .enter()
                     .append('svg:g')
@@ -8676,8 +9258,7 @@
             dimensions.exit()
                     .transition()
                     .duration(duration)
-                    .style('opacity', 0)
-                    .remove();
+                    .style('opacity', 0).remove();
 
             dimensions
                     .transition()
@@ -8724,8 +9305,7 @@
                                     return h(d.h);
                                 })
                                 .transition()
-                                .duration(duration)
-                                .attr('width', everywidth)
+                                .duration(duration).attr('width', everywidth)
                                 .attr('height', everyheight);
                     });
 
@@ -8754,8 +9334,7 @@
                         if (!d3.select(this).classed('none')) {
                             d3.select(this).
                                     classed('none', true)
-                                    .select('rect')
-                                    .transition()
+                                    .select('rect').transition()
                                     .duration(duration)
                                     .style('fill-opacity', 0);
                             var s = h.ticks(6).slice(1).reverse();
@@ -8899,12 +9478,10 @@
                                 .style({'text-anchor': 'end',
                                     'font-family': fontFamily,
                                     'font-size': labelSize,
-                                    'fill': labelColor
-                                })
+                                    'fill': labelColor})
                                 .text(yLegend);
 
-                        d3.select(this)
-                                .selectAll('.label')
+                        d3.select(this).selectAll('.label')
                                 .data([1])
                                 .enter()
                                 .append('svg:text')
@@ -8915,8 +9492,7 @@
                                     'fill': labelColor
                                 })
                                 .attr({'transform': 'rotate(-90)',
-                                    'y': 8,
-                                    'dy': '.71em'})
+                                    'y': 8, 'dy': '.71em'})
                                 .text(yLegend);
 
                         d3.select(this)
@@ -8930,8 +9506,7 @@
                         selection
                                 .selectAll('path')
                                 .style({'fill': 'none',
-                                    'stroke': axisPathColor,
-                                    'stroke-width': axisPathWidth,
+                                    'stroke': axisPathColor, 'stroke-width': axisPathWidth,
                                     'shape-rendering': 'crispEdges'});
 
                         selection
@@ -8949,12 +9524,10 @@
                         'fill': tickTextColor})
                     .attr('transform', function() {
                         return 'translate(' + this.getComputedTextLength() *
-                                Math.abs(Math.sin(xtickRotate) * .5) + ',' +
-                                (this.getComputedTextLength() *
-                                        (.5 * Math.abs(Math.sin(xtickRotate))) + 5)
+                                Math.abs(Math.sin(xtickRotate) * .5) + ',' + (this.getComputedTextLength() *
+                                (.5 * Math.abs(Math.sin(xtickRotate))) + 5)
                                 + ')rotate(' + xtickRotate + ')';
                     });
-
             g.select('.y-axis')
                     .selectAll('.tick')
                     .select('text')
@@ -8997,7 +9570,6 @@
                 return this;
             }
         };
-
         heat.sizeAvail = function(_) {
             if (!arguments.length)
                 return [widthAvail, heightAvail];
@@ -9018,8 +9590,7 @@
             if (!arguments.length)
                 return [tranX, tranY];
             else if (arguments.length !== 2
-                    || !isFinite(arguments[0])
-                    || !isFinite(arguments[1])) {
+                    || !isFinite(arguments[0]) || !isFinite(arguments[1])) {
                 console.error('The argument(element) in heat.tran(tranX, tranY) should be number and number of svg');
                 return this;
             }
@@ -9450,11 +10021,9 @@
         /************全局变量***************/
         var type = 'Map'; //类型
         var width = 1000; // 宽度
-        var height = 600; // 高度
-        var widthAvail = width; // 实际利用宽度
+        var height = 600; // 高度         var widthAvail = width; // 实际利用宽度
         var heightAvail = height; // 实际利用高度
-        var tranX = 0; //图形右移距离
-        var tranY = 0; //图形下移距离
+        var tranX = 0; //图形右移距离         var tranY = 0; //图形下移距离
         var data; //数据
         var fontSize = 3; //字体大小
         var fontFamily = 'Arial'; // 字体样式
@@ -9462,10 +10031,8 @@
         var floatTag; // 活动标签
         var div; // 外层div
         var svg; // 外层svg
-        var duration = 500; // 变化时间
-        var format = d3.format('s');
+        var duration = 500; // 变化时间         var format = d3.format('s');
         var color = map.color(); // 颜色
-
         /************局部变量***************/
         var mapScale = 550;
         var extentValue = [0, 100];
@@ -9578,8 +10145,7 @@
                     d3.select(cache.get(d.name))
                             .data([d])
                             .select('path')
-                            .attr('data-color', h(d.value))
-                            .style('fill', h(d.value));
+                            .attr('data-color', h(d.value)).style('fill', h(d.value));
                 }
             });
 
@@ -9595,8 +10161,7 @@
                     .on('mouseout', function(d) {
                         drawLegend(d, false, h);
                         d3.select(this)
-                                .select('path')
-                                .transition()
+                                .select('path').transition()
                                 .duration(duration)
                                 .style('fill', function() {
                                     return d3.select(this)
@@ -9677,10 +10242,9 @@
                                 .style('fill', stateFillColor)
                                 .style('stroke', stateStrokeColor);
 
-                        selection.append('svg:text')
-                                .attr('x', function(d) {
-                                    return projection(d.properties.cp)[0];
-                                })
+                        selection.append('svg:text').attr('x', function(d) {
+                            return projection(d.properties.cp)[0];
+                        })
                                 .attr('y', function(d) {
                                     return projection(d.properties.cp)[1];
                                 })
@@ -9707,10 +10271,8 @@
                     .classed('legend', true)
                     .each(function(d, i) {
                         d3.select(this)
-                                .append('svg:rect')
-                                .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                            widthAvail + 20,
-                                    'y': i % legendColumnNo * 20})
+                                .append('svg:rect').attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap + widthAvail + 20,
+                            'y': i % legendColumnNo * 20})
                                 .attr({'width': 10,
                                     'height': 10})
                                 .style('fill', h)
@@ -9724,16 +10286,14 @@
                         d3.select(this)
                                 .append('svg:text')
                                 .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                            widthAvail + 40,
-                                    'y': i % legendColumnNo * 20 + 9})
+                                            widthAvail + 40, 'y': i % legendColumnNo * 20 + 9})
                                 .style({'opacity': 0,
                                     'fill': legendColor,
                                     'font-size': legendSize,
                                     'font-family': fontFamily})
                                 .transition()
                                 .duration(duration)
-                                .style('opacity', 1)
-                                .text(String);
+                                .style('opacity', 1).text(String);
                     });
         }
 
@@ -9807,7 +10367,6 @@
                 return this;
             }
         };
-
         map.tran = function(_) {
             if (!arguments.length)
                 return [tranX, tranY];
@@ -9893,7 +10452,6 @@
                 }
             }
         };
-
         map.tickFormat = function(_) {
             if (!arguments.length)
                 return format;
@@ -10014,8 +10572,7 @@
                     'fontFamily': fontFamily,
                     'color': color,
                     'duration': duration,
-                    'mapScale': mapScale,
-                    'extentValue': extentValue,
+                    'mapScale': mapScale, 'extentValue': extentValue,
                     'stateFillColor': stateFillColor,
                     'stateStrokeColor': stateStrokeColor,
                     'activeStateColor': activeStateColor,
@@ -10061,8 +10618,7 @@
      */
     pvisual.model.multiline = function() {
         var multiline = pvisual.extend(); //主函數
-        var d3 = _.d3; // d3
-        /************全局变量***************/
+        var d3 = _.d3; // d3         /************全局变量***************/
         var type = '多线图'; //类型
         var width = 800; // 宽度
         var height = 400; // 高度
@@ -10086,9 +10642,7 @@
         var interpolate = 'liner';
         var tension = .7;
         var dimension;
-
-        /******坐标轴******/
-        var yLegend = '';
+        /******坐标轴******/         var yLegend = '';
         var xLegend = '';
         var xtickRotate = 0;
         var ytickRotate = 0;
@@ -10184,10 +10738,9 @@
                     dimension.x = value.x.values();
                 } else if (_.type === 'tsv' || _.type === 'csv') {
                     var value = {x: d3.set()};
-                    dimension = pvisual.keys(_[0])
-                            .filter(function(d) {
-                                return d !== 'x';
-                            })
+                    dimension = pvisual.keys(_[0]).filter(function(d) {
+                        return d !== 'x';
+                    })
                             .map(function(d) {
                                 value[d] = d3.map();
                                 return {name: d, _flag: true};
@@ -10325,7 +10878,6 @@
                             return '' + d;
                         })
                         .range([0, widthAvail]);
-
                 xAxis = d3.svg.axis()
                         .scale(x)
                         .orient('bottom')
@@ -10368,8 +10920,7 @@
             var g = d3.select(svg)
                     .attr({'width': width,
                         'height': height})
-                    .selectAll('g')
-                    .data([1])
+                    .selectAll('g').data([1])
                     .enter()
                     .append('svg:g')
                     .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
@@ -10401,8 +10952,7 @@
             dimensionDraw(dimensions, line, x, y, source);
 
             var legends = g.select('.legends')
-                    .attr('transform', 'translate(' + legendTranX + ',' + legendTranY + ')')
-                    .selectAll('.legend')
+                    .attr('transform', 'translate(' + legendTranX + ',' + legendTranY + ')').selectAll('.legend')
                     .data(dimension);
             legends.exit()
                     .transition()
@@ -10440,8 +10990,7 @@
                                 .classed('line', true)
                                 .attr('d', function(d) {
                                     return line(d.points);
-                                })
-                                .style('fill', 'none')
+                                }).style('fill', 'none')
                                 .style('stroke', function(d) {
                                     return color(d.name);
                                 })
@@ -10567,12 +11116,11 @@
             g.select('.y-axis')
                     .each(function() {
                         d3.select(this)
-                                .select('.label')
-                                .style({'text-anchor': 'end',
-                                    'font-family': fontFamily,
-                                    'font-size': labelSize,
-                                    'fill': labelColor
-                                })
+                                .select('.label').style({'text-anchor': 'end',
+                            'font-family': fontFamily,
+                            'font-size': labelSize,
+                            'fill': labelColor
+                        })
                                 .text(yLegend);
 
                         d3.select(this)
@@ -10600,11 +11148,9 @@
             g.selectAll('.axis')
                     .call(function(selection) {
                         selection
-                                .selectAll('path')
-                                .style({'fill': 'none',
-                                    'stroke': axisPathColor,
-                                    'stroke-width': axisPathWidth,
-                                    'shape-rendering': 'crispEdges'});
+                                .selectAll('path').style({'fill': 'none', 'stroke': axisPathColor,
+                            'stroke-width': axisPathWidth,
+                            'shape-rendering': 'crispEdges'});
 
                         selection
                                 .selectAll('line')
@@ -10779,7 +11325,6 @@
                 }
             }
         };
-
         multiline.timeFormat = function(_) {
             if (!arguments.length)
                 return timeFormat;
@@ -11107,8 +11652,7 @@
                     'interpolate': interpolate,
                     'tension': tension,
                     'timeFormat': timeFormat,
-                    'isLinear': isLinear,
-                    'xLegend': xLegend,
+                    'isLinear': isLinear, 'xLegend': xLegend,
                     'yLegend': yLegend,
                     'xtickRotate': xtickRotate,
                     'ytickRotate': ytickRotate,
@@ -11120,8 +11664,7 @@
                     'tickTextColor': tickTextColor,
                     'tickLineColor': tickLineColor,
                     'xtickLineLength': xtickLineLength,
-                    'ytickLineLength': ytickLineLength,
-                    'axisPathWidth': axisPathWidth,
+                    'ytickLineLength': ytickLineLength, 'axisPathWidth': axisPathWidth,
                     'axisPathColor': axisPathColor,
                     'legendColor': legendColor,
                     'legendSize': legendSize,
@@ -11185,8 +11728,7 @@
         var d3 = _.d3; // d3
         /************全局变量***************/
         var type = '平行坐标系'; //类型
-        var width = 800; // 宽度
-        var height = 400; // 高度
+        var width = 800; // 宽度         var height = 400; // 高度
         var widthAvail = width - 10; // 实际利用宽度
         var heightAvail = height - 20; // 实际利用高度
         var tranX = 10; //图形右移距离
@@ -11201,7 +11743,6 @@
         var duration = 1000; // 变化时间
         var format = d3.format('s');
         var color = parallel.color();
-
         /************局部变量***************/
         var dimension;
         var lineColor = function(d, i) {
@@ -11213,8 +11754,7 @@
         var backColor = function(d, i) {
             return '#EEEEEE';
         };
-        /******坐标轴******/
-        var ytickRotate = 0;
+        /******坐标轴******/         var ytickRotate = 0;
         var ytickNumber = 5;
         var ytickLineLength = 5;
         var tickTextSize = 8;
@@ -11314,10 +11854,8 @@
                     .enter()
                     .append('svg:g')
                     .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
-
             g.call(function(selection) {
-                selection.append('svg:g')
-                        .classed('dimensions', true);
+                selection.append('svg:g').classed('dimensions', true);
                 selection.append('svg:g')
                         .classed('y-axis axis', true);
             });
@@ -11736,7 +12274,6 @@
                 }
             }
         };
-
         parallel.backColor = function(_) {
             if (!arguments.length)
                 return backColor;
@@ -11787,8 +12324,7 @@
                     'ytickRotate': ytickRotate,
                     'ytickNumber': ytickNumber,
                     'tickTextSize': tickTextSize,
-                    'tickTextColor': tickTextColor,
-                    'tickLineColor': tickLineColor,
+                    'tickTextColor': tickTextColor, 'tickLineColor': tickLineColor,
                     'ytickLineLength': ytickLineLength,
                     'axisPathWidth': axisPathWidth,
                     'axisPathColor': axisPathColor
@@ -12063,8 +12599,7 @@
 
                             d3.select(this)
                                     .transition()
-                                    .duration(duration / 2)
-                                    .ease(ease)
+                                    .duration(duration / 2).ease(ease)
                                     .attr('opacity', 1)
                                     .attr('transform', 'translate(' + (radius.x) + ', ' + (radius.y) + ')');
 
@@ -12147,10 +12682,9 @@
                     })
                     .attr('transform', function(d) {
                         return (d.endAngle + d.startAngle) / 2 > Math.PI ? 'rotate(180)translate(-16)' : null;
-                    })
-                    .style({'font-family': fontFamily,
-                        'fill': fontColor,
-                        'font-size': fontSize})
+                    }).style({'font-family': fontFamily,
+                'fill': fontColor,
+                'font-size': fontSize})
                     .text(function(d) {
                         return d.endAngle - d.startAngle > .03 ? d.data.name : '...';
                     });
@@ -12270,14 +12804,12 @@
         function drawLegend(d, style) {
             if (style) {
                 floatTag.style({
-                    'border-color': color(d.name),
-                    'opacity': 1,
+                    'border-color': color(d.name), 'opacity': 1,
                     'textAlign': 'center',
                     'margin': 'auto'
                 }).html('<p style="color:#3f7ed8; font-weight:bold; font-size:11px;margin-bottom:5px;">name: ' +
                         d.name + '</p>value: ' + format(d.value));
-            }
-            else {
+            } else {
                 floatTag.style('opacity', 0);
             }
         }
@@ -12313,7 +12845,6 @@
                 return this;
             }
         };
-
         pie.tran = function(_) {
             if (!arguments.length)
                 return [tranX, tranY];
@@ -12530,8 +13061,7 @@
                     'fontFamily': fontFamily,
                     'color': color,
                     'duration': duration,
-                    'outerRadius': outerRadius,
-                    'innerRadius': innerRadius,
+                    'outerRadius': outerRadius, 'innerRadius': innerRadius,
                     'ease': ease,
                     'legendColor': legendColor,
                     'legendSize': legendSize,
@@ -12578,8 +13108,7 @@
      * @returns {_L5.pvisual.extend.sub|Window|Object}
      */
     pvisual.model.radar = function() {
-        var radar = pvisual.extend(); //主函數
-        var d3 = _.d3; // d3
+        var radar = pvisual.extend(); //主函數         var d3 = _.d3; // d3
         /************全局变量***************/
         var type = '雷达图'; //类型
         var width = 700; // 宽度
@@ -12684,8 +13213,7 @@
             }
             d3.select(div).classed('chart', true);
             svg = svg || d3.select(div)
-                    .append('svg')
-                    .classed('radar', true)
+                    .append('svg').classed('radar', true)
                     .node();
 
             /* 计算要需的数据值 */
@@ -12741,7 +13269,7 @@
                 selection.append('svg:g')
                         .classed('levels', true); // 网格线
                 selection.append('svg:g')
-                        .classed('ticks', true); //刻度
+                        .classed('ticks', true); //刻度    
                 selection.append('svg:g')
                         .classed('items', true); //数据项
                 selection.append('svg:g')
@@ -12754,10 +13282,9 @@
 
             /* 绘制数据点 */
             var items = g.select('.items')
-                    .selectAll('.item')
-                    .data(data.filter(function(d) {
-                        return d._flag;
-                    }));
+                    .selectAll('.item').data(data.filter(function(d) {
+                return d._flag;
+            }));
             items.exit()
                     .transition()
                     .duration(duration / 2)
@@ -12776,14 +13303,12 @@
             dataUpdate(items, tooltip);
             dataDraw(items, tooltip);
 
-            /* 绘制网格线 */
-            var loops = g.select('.levels')
+            /* 绘制网格线 */             var loops = g.select('.levels')
                     .selectAll('.level')
                     .data(d3.range(segs));
             loops.exit()
                     .transition()
-                    .duration(duration / 2)
-                    .style('opacity', 0)
+                    .duration(duration / 2).style('opacity', 0)
                     .remove();
             loopsUpdate(loops);
             loopsDraw(loops);
@@ -12825,7 +13350,6 @@
             legendUpdate(legends);
             legendDraw(legends);
         };
-
         function dataDraw(items, tooltip) {
             var line = d3.svg.line()
                     .x(function(d) {
@@ -12883,8 +13407,7 @@
                                 .duration(duration / 2)
                                 .style('opacity', 0)
                                 .remove();
-                        node.enter().append('svg:circle')
-                                .classed('node', true)
+                        node.enter().append('svg:circle').classed('node', true)
                                 .style({'fill': color(i),
                                     'fill-opacity': 0})
                                 .on('mouseover', function(d) {
@@ -12996,8 +13519,7 @@
                         })
                         .on('mouseout', function() {
                             items.selectAll('.radar')
-                                    .transition(200)
-                                    .style('fill-opacity', .5);
+                                    .transition(200).style('fill-opacity', .5);
                             tooltip.transition(200)
                                     .style('opacity', 0);
                         })
@@ -13035,8 +13557,7 @@
                                 .append('svg:line')
                                 .classed('line', true)
                                 .style({'stroke': gridColor,
-                                    'stroke-dasharray': '3,1',
-                                    'stroke-opacity': '0',
+                                    'stroke-dasharray': '3,1', 'stroke-opacity': '0',
                                     'stroke-width': 1})
                                 .transition()
                                 .duration(duration)
@@ -13095,8 +13616,7 @@
                         .classed('line', true)
                         .style({'stroke': gridColor,
                             'stroke-dasharray': '3,1',
-                            'stroke-opacity': '0',
-                            'stroke-width': 1})
+                            'stroke-opacity': '0', 'stroke-width': 1})
                         .transition()
                         .duration(duration)
                         .attr('x1', function(p, i) {
@@ -13121,8 +13641,7 @@
 
         function ticksDraw(ticks) {
             ticks.enter()
-                    .append('svg:text')
-                    .classed('tick', true)
+                    .append('svg:text').classed('tick', true)
                     .each(function(d) {
                         var levelFactor = radius * (++d / segs);
                         d3.select(this)
@@ -13170,8 +13689,7 @@
                                 .selectAll('.line')
                                 .data([d]);
 
-                        line.exit()
-                                .transition()
+                        line.exit().transition()
                                 .duration(duration / 2)
                                 .style('opacity', 0)
                                 .remove();
@@ -13183,8 +13701,7 @@
                                     'stroke-width': axisPathWidth})
                                 .attr({'x1': widthAvail / 2,
                                     'y1': heightAvail / 2})
-                                .transition()
-                                .duration(duration)
+                                .transition().duration(duration)
                                 .attrTween('x2', function() {
                                     var q = d3.interpolate(index * 2 * Math.PI, i * 2 *
                                             Math.PI / allAxis.length);
@@ -13217,8 +13734,7 @@
                                 .attr({'transform': 'translate(0, -10)',
                                     'text-anchor': 'middle',
                                     'dy': '1.5em'})
-                                .transition()
-                                .duration(duration)
+                                .transition().duration(duration)
                                 .attrTween('x', function() {
                                     var q = d3.interpolate(index * 2 * Math.PI, i * 2 *
                                             Math.PI / allAxis.length);
@@ -13252,17 +13768,15 @@
                 line.transition()
                         .duration(duration)
                         .style({'stroke': axisPathColor,
-                            'stroke-width': axisPathWidth})
-                        .attrTween('x2', function() {
-                            var q = d3.interpolate(index * 2 * Math.PI, i * 2 *
-                                    Math.PI / allAxis.length);
-                            return function(t) {
-                                return  widthAvail / 2 - radius * Math.sin(q(t));
-                            };
-                        })
+                            'stroke-width': axisPathWidth}).attrTween('x2', function() {
+                    var q = d3.interpolate(index * 2 * Math.PI, i * 2 *
+                            Math.PI / allAxis.length);
+                    return function(t) {
+                        return  widthAvail / 2 - radius * Math.sin(q(t));
+                    };
+                })
                         .attrTween('y2', function() {
-                            var q = d3.interpolate(index * 2 * Math.PI, i * 2 *
-                                    Math.PI / allAxis.length);
+                            var q = d3.interpolate(index * 2 * Math.PI, i * 2 * Math.PI / allAxis.length);
                             return function(t) {
                                 return  heightAvail / 2 - radius * Math.cos(q(t));
                             };
@@ -13332,8 +13846,7 @@
                         d3.select(this)
                                 .append('svg:rect')
                                 .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                            radius * 2,
-                                    'y': i % legendColumnNo * 20 + 10})
+                                            radius * 2, 'y': i % legendColumnNo * 20 + 10})
                                 .attr({'width': 10,
                                     'height': 10})
                                 .style({'fill': color(i),
@@ -13702,8 +14215,7 @@
                     'height': height,
                     'format': format,
                     'segnumber': segs,
-                    'fontSize': fontSize,
-                    'fontFamily': fontFamily,
+                    'fontSize': fontSize, 'fontFamily': fontFamily,
                     'legendsize': legendSize,
                     'duration': duration};
             else if (typeof _ !== 'object') {
@@ -13899,8 +14411,7 @@
                     .select('g');
 
             var links = g.select('.links')
-                    .selectAll('.link')
-                    .data(data.links);
+                    .selectAll('.link').data(data.links);
             links.exit()
                     .transition()
                     .duration(duration)
@@ -13964,10 +14475,9 @@
         }
 
         function nodeUpdate(nodes, san, path, links) {
-            nodes.call(d3.behavior.drag()
-                    .origin(function(d) {
-                        return d;
-                    })
+            nodes.call(d3.behavior.drag().origin(function(d) {
+                return d;
+            })
                     .on('dragstart', function() {
                         this.parentNode.appendChild(this);
                     })
@@ -13981,10 +14491,9 @@
                                 .transition()
                                 .duration(duration)
                                 .attr('height', d.dy)
-                                .attr('width', san.nodeWidth())
-                                .style('fill', function() {
-                                    return d.color = color(i);
-                                })
+                                .attr('width', san.nodeWidth()).style('fill', function() {
+                            return d.color = color(i);
+                        })
                                 .style('stroke', function() {
                                     return d3.rgb(d.color).darker(2);
                                 });
@@ -14144,8 +14653,7 @@
         sankey.sizeAvail = function(_) {
             if (!arguments.length)
                 return [widthAvail, heightAvail];
-            else if (arguments.length !== 2
-                    || !isFinite(arguments[0])
+            else if (arguments.length !== 2 || !isFinite(arguments[0])
                     || !isFinite(arguments[1])) {
                 console.error('The argument(element) in sankey.sizeAvail(widthAvail, heightAvail) should be number and number of svg');
                 return this;
@@ -14161,8 +14669,7 @@
             if (!arguments.length)
                 return [tranX, tranY];
             else if (arguments.length !== 2
-                    || !isFinite(arguments[0])
-                    || !isFinite(arguments[1])) {
+                    || !isFinite(arguments[0]) || !isFinite(arguments[1])) {
                 console.error('The argument(element) in sankey.tran(tranX, tranY) should be number and number of svg');
                 return this;
             }
@@ -14214,7 +14721,6 @@
                 }
             }
         };
-
         sankey.duration = function(_) {
             if (!arguments.length)
                 return duration;
@@ -14287,9 +14793,7 @@
 
         sankey.options = function(_) {
             if (!arguments.length)
-                return {
-                    'type': sankey.getType(),
-                    'width': width,
+                return {'type': sankey.getType(), 'width': width,
                     'height': height,
                     'widthAvail': widthAvail,
                     'heightAvail': heightAvail,
@@ -14297,8 +14801,7 @@
                     'tranY': tranY,
                     'format': format,
                     'fontSize': fontSize,
-                    'fontColor': fontColor,
-                    'fontFamily': fontFamily,
+                    'fontColor': fontColor, 'fontFamily': fontFamily,
                     'color': color,
                     'duration': duration,
                     'linkOpacity': linkOpacity,
@@ -14348,8 +14851,7 @@
         var data; //数据
         var fontFamily = 'Arial'; // 字体样式
         var div; // 外层div
-        var svg; // 外层svg
-        var duration = 1000; // 变化时间
+        var svg; // 外层svg         var duration = 1000; // 变化时间
         var format = d3.format('.3s');
         var color = scatterplot.color();
 
@@ -14436,8 +14938,7 @@
             d3.select(div).classed('chart', true);
             svg = svg || d3.select(div)
                     .append('svg')
-                    .classed('scatterplot', true)
-                    .node();
+                    .classed('scatterplot', true).node();
 
             /* 初始化变量 */
             var dimen = dimension.filter(function(d) {
@@ -14499,7 +15000,6 @@
                     .duration(duration)
                     .style('opacity', 0)
                     .remove();
-
             labelUpdate(labels);
             labelDraw(labels);
 
@@ -14531,8 +15031,7 @@
                 var circles = cell.selectAll('circle')
                         .data(data);
 
-                circles.exit()
-                        .transition()
+                circles.exit().transition()
                         .duration(duration)
                         .style('opacity', 0)
                         .remove();
@@ -14542,10 +15041,9 @@
                             return d.species;
                         })
                         .transition()
-                        .duration(duration)
-                        .attr('fill', function(d) {
-                            return color(d.species);
-                        })
+                        .duration(duration).attr('fill', function(d) {
+                    return color(d.species);
+                })
                         .attr('cx', function(d) {
                             return x[p.x.name](d[p.x.name]);
                         })
@@ -14571,8 +15069,6 @@
 
                 cell.call(brush.x(x[p.x.name]).y(y[p.y.name]));
             });
-
-
             dimensions.enter()
                     .append('svg:g')
                     .classed('dimension', true)
@@ -14582,15 +15078,14 @@
                     .each(function(p) {
                         var cell = d3.select(this);
                         cell.append('svg:rect')
-                                .classed('frame', true)
-                                .attr({'x': gap / 2,
-                                    'y': gap / 2,
-                                    'width': radius - gap,
-                                    'height': radius - gap,
-                                    'fill': 'none',
-                                    'stroke': '#444444',
-                                    'stroke-width': '1px'
-                                });
+                                .classed('frame', true).attr({'x': gap / 2,
+                            'y': gap / 2,
+                            'width': radius - gap,
+                            'height': radius - gap,
+                            'fill': 'none',
+                            'stroke': '#444444',
+                            'stroke-width': '1px'
+                        });
 
                         cell.selectAll('circle')
                                 .data(data)
@@ -14719,11 +15214,10 @@
                                 .append('svg:text')
                                 .classed('y', true)
                                 .text(d.name)
-                                .attr('transform', 'translate(-5,' + (i + .5) * radius + ')rotate(-90)')
-                                .style({'text-anchor': 'middle',
-                                    'font-family': fontFamily,
-                                    'font-size': labelSize,
-                                    'fill': labelColor});
+                                .attr('transform', 'translate(-5,' + (i + .5) * radius + ')rotate(-90)').style({'text-anchor': 'middle',
+                            'font-family': fontFamily,
+                            'font-size': labelSize,
+                            'fill': labelColor});
 
                     });
         }
@@ -14751,8 +15245,7 @@
                         d3.select(this)
                                 .append('svg:rect')
                                 .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                            widthAvail + 20,
-                                    'y': i % legendColumnNo * 20})
+                                            widthAvail + 20, 'y': i % legendColumnNo * 20})
                                 .attr({'width': 10,
                                     'height': 10})
                                 .style({'fill': color(i),
@@ -14875,7 +15368,6 @@
                                 .duration(duration)
                                 .call(axis.scale(y[d.name]).orient('right'));
                     });
-
             g.selectAll('.axis')
                     .call(function(selection) {
                         selection
@@ -14909,8 +15401,7 @@
                     .select('text')
                     .style({'text-anchor': 'start',
                         'font-family': fontFamily,
-                        'font-size': tickTextSize,
-                        'fill': tickTextColor})
+                        'font-size': tickTextSize, 'fill': tickTextColor})
                     .attr('transform', function() {
                         return 'rotate(' + ytickRotate + ')';
                     });
@@ -14923,7 +15414,6 @@
                     c.push({x: a[i], i: i, y: b[j], j: j});
             return c;
         }
-
         scatterplot.size = function(_) {
             if (!arguments.length)
                 return [width, height];
@@ -15322,8 +15812,7 @@
         var width = 800; // 宽度
         var height = 400; // 高度
         var widthAvail = width - 200; // 实际利用宽度
-        var heightAvail = height - 100; // 实际利用高度
-        var tranX = 50; //图形右移距离
+        var heightAvail = height - 100; // 实际利用高度         var tranX = 50; //图形右移距离
         var tranY = 0; //图形下移距离
         var data; //数据
         var fontFamily = 'Arial'; // 字体样式
@@ -15581,13 +16070,11 @@
                                 .append('svg:rect')
                                 .attr({'height': 0,
                                     'y': y(0),
-                                    'width': x.rangeBand()})
-                                .style('fill', function(d) {
-                                    return color(d.name);
-                                })
-                                .on('mouseover', function(d) {
-                                    drawLegend(d, true);
-                                })
+                                    'width': x.rangeBand()}).style('fill', function(d) {
+                            return color(d.name);
+                        }).on('mouseover', function(d) {
+                            drawLegend(d, true);
+                        })
                                 .on('mouseout', function(d) {
                                     drawLegend(d, false);
                                 })
@@ -15652,8 +16139,7 @@
                         d3.select(this)
                                 .append('svg:rect')
                                 .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                            widthAvail + 20,
-                                    'y': i % legendColumnNo * 20})
+                                            widthAvail + 20, 'y': i % legendColumnNo * 20})
                                 .attr({'width': 10,
                                     'height': 10})
                                 .style({'fill': color(i),
@@ -15689,8 +16175,7 @@
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
                         .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
-                            'y': i % legendColumnNo * 20});
+                                    widthAvail + 20, 'y': i % legendColumnNo * 20});
 
                 d3.select(this)
                         .selectAll('text')
@@ -15751,12 +16236,10 @@
                                 .style({'text-anchor': 'end',
                                     'font-family': fontFamily,
                                     'font-size': labelSize,
-                                    'fill': labelColor
-                                })
+                                    'fill': labelColor})
                                 .text(yLegend);
 
-                        d3.select(this)
-                                .selectAll('.label')
+                        d3.select(this).selectAll('.label')
                                 .data([1])
                                 .enter()
                                 .append('svg:text')
@@ -15767,8 +16250,7 @@
                                     'fill': labelColor
                                 })
                                 .attr({'transform': 'rotate(-90)',
-                                    'y': 8,
-                                    'dy': '.71em'})
+                                    'y': 8, 'dy': '.71em'})
                                 .text(yLegend);
 
                         d3.select(this)
@@ -15803,8 +16285,7 @@
                         return 'translate(' + this.getComputedTextLength() *
                                 Math.abs(Math.sin(xtickRotate) * .5) + ',' +
                                 (this.getComputedTextLength() *
-                                        (.5 * Math.abs(Math.sin(xtickRotate))) + 5)
-                                + ')rotate(' + xtickRotate + ')';
+                                        (.5 * Math.abs(Math.sin(xtickRotate))) + 5) + ')rotate(' + xtickRotate + ')';
                     });
 
             g.select('.y-axis')
@@ -15979,7 +16460,6 @@
                 }
             }
         };
-
         stackbar.yLegend = function(_) {
             if (!arguments.length)
                 return yLegend;
@@ -16149,7 +16629,6 @@
                 return this;
             }
         };
-
         stackbar.legendSize = function(_) {
             if (!arguments.length)
                 return legendSize;
@@ -16313,8 +16792,7 @@
         var color = sunburst.color();
 
         /************局部变量***************/
-        var radius = Math.min(widthAvail, heightAvail) * .45; // 雷达图半径
-        var gapColor = '#FFFFFF';
+        var radius = Math.min(widthAvail, heightAvail) * .45; // 雷达图半径         var gapColor = '#FFFFFF';
 
         sunburst.data = function(_) {
             if (arguments.length) {
@@ -16338,7 +16816,6 @@
             if (!div || div.tagName.toLowerCase() !== 'div') {
                 console.error('The argument(element) in sunburst.rander(_) should be <div> element');
             }
-
             d3.select(div).classed('chart', true);
             svg = svg || d3.select(div)
                     .append('svg')
@@ -16365,8 +16842,7 @@
                     })
                     .value(function(d) {
                         return d.value;
-                    })
-                    .nodes(data)
+                    }).nodes(data)
                     .map(function(d) {
                         d.sum = d.value;
                         d.fill = fill(d, luminance);
@@ -16454,8 +16930,7 @@
                 });
             });
             nodes.enter()
-                    .append('g')
-                    .classed('node', true)
+                    .append('g').classed('node', true)
                     .attr('data-depth', function(d) {
                         return d.depth;
                     })
@@ -16478,10 +16953,8 @@
                                 .style('stroke', function() {
                                     return d.dx < .002 ? 'none' : gapColor;
                                 })
-                                .transition()
-                                .duration(duration)
-                                .attr('d', arc)
-                                .style('opacity', 1);
+                                .transition().duration(duration)
+                                .attr('d', arc).style('opacity', 1);
                         d3.select(this)
                                 .append('text')
                                 .attr('dy', '5px')
@@ -16788,7 +17261,6 @@
                 }
             }
         };
-
         sunburst.options = function(_) {
             if (!arguments.length)
                 return {
@@ -16805,8 +17277,7 @@
                     'fontFamily': fontFamily,
                     'color': color,
                     'duration': duration,
-                    'radius': radius,
-                    'gapColor': gapColor
+                    'radius': radius, 'gapColor': gapColor
 
                 };
             else if (typeof _ !== 'object') {
@@ -16846,8 +17317,7 @@
         var type = 'Surveyplot'; //类型
         var width = 800; // 宽度
         var height = 400; // 高度
-        var widthAvail = width - 150; // 实际利用宽度
-        var heightAvail = height - 100; // 实际利用高度
+        var widthAvail = width - 150; // 实际利用宽度         var heightAvail = height - 100; // 实际利用高度
         var data; //数据
         var tranX = 30; //图形右移距离
         var tranY = 20; //图形下移距离
@@ -17030,8 +17500,7 @@
 
         function dimensionUpdate(dimensions, x0, x1, y, dimen) {
             dimensions
-                    .transition()
-                    .duration(duration)
+                    .transition().duration(duration)
                     .attr('transform', function(d) {
                         return 'translate(' + x0(d.name) + ', 0)';
                     })
@@ -17318,8 +17787,7 @@
                                     'font-family': fontFamily,
                                     'font-size': labelSize,
                                     'fill': labelColor
-                                })
-                                .text(yLegend);
+                                }).text(yLegend);
 
                         d3.select(this)
                                 .selectAll('.label')
@@ -17348,8 +17816,7 @@
                         selection
                                 .selectAll('path')
                                 .style({'fill': 'none',
-                                    'stroke': axisPathColor,
-                                    'stroke-width': axisPathWidth,
+                                    'stroke': axisPathColor, 'stroke-width': axisPathWidth,
                                     'shape-rendering': 'crispEdges'});
 
                         selection
@@ -17481,7 +17948,6 @@
                 }
             }
         };
-
         surveyplot.duration = function(_) {
             if (!arguments.length)
                 return duration;
@@ -17495,7 +17961,6 @@
                 }
             }
         };
-
         surveyplot.color = function(_) {
             if (!arguments.length)
                 return color;
@@ -17551,7 +18016,6 @@
                 }
             }
         };
-
         surveyplot.xtickRotate = function(_) {
             if (!arguments.length)
                 return xtickRotate;
@@ -17579,7 +18043,6 @@
                 }
             }
         };
-
         surveyplot.labelSize = function(_) {
             if (!arguments.length)
                 return labelSize;
@@ -17696,8 +18159,7 @@
         surveyplot.legendTran = function(_) {
             if (!arguments.length)
                 return [legendTranX, legendTranY];
-            else if (arguments.length !== 2
-                    || !isFinite(arguments[0])
+            else if (arguments.length !== 2 || !isFinite(arguments[0])
                     || !isFinite(arguments[1])) {
                 console.error('The argument(element) in surveyplot.legendTran(tranX, tranY) should be number and number of svg');
                 return this;
@@ -17917,7 +18379,6 @@
             } else
                 return data;
         };
-
         tree.getType = function() {
             return type;
         };
@@ -17929,10 +18390,8 @@
                 console.error('The argument(element) in tree.rander(_) should be <div> element');
             }
             d3.select(div).classed('chart', true);
-            svg = svg || d3.select(div)
-                    .append('svg')
-                    .classed('tree', true)
-                    .node();
+            svg = svg || d3.select(div).append('svg')
+                    .classed('tree', true).node();
 
             /* 初始化变量 */
             layout = d3.layout.tree()
@@ -17968,8 +18427,7 @@
              * 展开成一维，得到数组nodes。reverse决定这个一维数组是否要反序：有reverse则深层节点的信息排在前面，上层的信息在后面
              * 所有节点将获得以下属性：
              * parent
-             * children
-             * depth
+             * children              * depth
              * x（适用任意坐标系，代表其中一个量度）表示相同深度的平行分布状况
              * y（适用任意坐标系，代表另一个量度）表示关于深度的位置*/
             var nodeData = layout.nodes(data).reverse();
@@ -18018,8 +18476,7 @@
 
             nodeEnter.append('svg:text')
                     .attr({'font-size': fontSize,
-                        'fill': fontColor,
-                        'font-family': fontFamily,
+                        'fill': fontColor, 'font-family': fontFamily,
                         'fill-opacity': 0,
                         'dy': '.35em'})
                     .attr('x', function(d) {
@@ -18037,7 +18494,6 @@
                     .attr('transform', function(d) {
                         return 'translate(' + d.y + ',' + d.x + ')';
                     });
-
             nodeUpdate.select('circle')
                     .attr('r', function(d, i) {
                         return d.children || d._children ? leafSize(d, i) : nodeSize(d, i);
@@ -18072,8 +18528,7 @@
                     .attr('d', function() {
                         var o = {x: source.x0, y: source.y0};
                         return diagonal({source: o, target: o});
-                    })
-                    .transition()
+                    }).transition()
                     .duration(duration)
                     .attr('d', diagonal);
 
@@ -18095,7 +18550,6 @@
                 d.y0 = d.y;
             });
         }
-
         function toggleAll(d) {
             if (d.children) {
                 d.children.forEach(toggleAll);
@@ -18137,8 +18591,7 @@
                     for (var i = 0; i < k.length; i++) {
                         k[i]
                                 .children
-                                .children = XMLdata(k[i]
-                                        .children
+                                .children = XMLdata(k[i].children
                                         .children);
                     }
 
@@ -18303,7 +18756,6 @@
                 }
             }
         };
-
         tree.lineColor = function(_) {
             if (!arguments.length)
                 return lineColor;
@@ -18345,7 +18797,6 @@
                 }
             }
         };
-
         tree.nodeSize = function(_) {
             if (!arguments.length)
                 return nodeSize;
@@ -18390,8 +18841,7 @@
                     'fontFamily': fontFamily,
                     'color': color,
                     'duration': duration,
-                    'lineWidth': lineWidth,
-                    'lineColor': lineColor,
+                    'lineWidth': lineWidth, 'lineColor': lineColor,
                     'leafSize': leafSize,
                     'leafColor': leafColor,
                     'nodeSize': nodeSize,
@@ -18505,10 +18955,9 @@
                     .domain([0, 1e6])
                     .clamp(true)
                     .range([90, 20]);
-            layout.nodes(data)
-                    .filter(function(d) {
-                        return !d.children;
-                    });
+            layout.nodes(data).filter(function(d) {
+                return !d.children;
+            });
             node = data;
 
             var g = d3.select(svg)
@@ -18543,10 +18992,9 @@
                     .classed('node', true)
                     .on('click', function(d) {
                         return zoom(d, x, y, g, luminance);
-                    })
-                    .on('mouseover', function(d) {
-                        drawLegend(d, true);
-                    })
+                    }).on('mouseover', function(d) {
+                drawLegend(d, true);
+            })
                     .on('mouseout', function(d) {
                         drawLegend(d, false);
                     })
@@ -18573,9 +19021,7 @@
                                 })
                                 .transition()
                                 .duration(duration)
-                                .style({'dy': '.35em',
-                                    'text-anchor': 'middle',
-                                    'font-family': fontFamily,
+                                .style({'dy': '.35em', 'text-anchor': 'middle', 'font-family': fontFamily,
                                     'fill': fontColor,
                                     'font-size': fontSize});
 
@@ -18603,8 +19049,7 @@
                     'textAlign': 'center',
                     'margin': 'auto',
                     'color': '#ffffff'
-                }).html('<p style="color:#3f7ed8; font - weight:bold; font - size:13px">name: ' +
-                        d.name + '</p>value: ' + format(d.value.toFixed(5)));
+                }).html('<p style="color:#3f7ed8; font - weight:bold; font - size:13px">name: ' + d.name + '</p>value: ' + format(d.value.toFixed(5)));
             }
             else {
                 floatTag.style('visibility', 'hidden');
@@ -18621,8 +19066,7 @@
             var t = g.select('.nodes')
                     .selectAll('.node')
                     .data(d.children ? d.children : [d]);
-            t.exit()
-                    .transition()
+            t.exit().transition()
                     .duration(duration / 2)
                     .style('opacity', 0)
                     .remove();
@@ -18764,7 +19208,6 @@
                 return this;
             }
         };
-
         treemap.sizeAvail = function(_) {
             if (!arguments.length)
                 return [widthAvail, heightAvail];
@@ -18810,7 +19253,6 @@
                 }
             }
         };
-
         treemap.fontFamily = function(_) {
             if (!arguments.length)
                 return fontFamily;
@@ -18891,8 +19333,7 @@
                     'heightAvail': heightAvail,
                     'tranX': tranX,
                     'tranY': tranY,
-                    'format': format,
-                    'fontSize': fontSize,
+                    'format': format, 'fontSize': fontSize,
                     'fontColor': fontColor,
                     'fontFamily': fontFamily,
                     'color': color,
@@ -19078,18 +19519,16 @@
                     .attr('text-anchor', 'middle')
                     .attr('transform', function(d) {
                         return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')';
-                    })
-                    .text(function(d) {
-                        return d.text;
-                    });
+                    }).text(function(d) {
+                return d.text;
+            });
         }
 
         wordcloud.size = function(_) {
             if (!arguments.length)
                 return [width, height];
             else if (arguments.length !== 2
-                    || !isFinite(arguments[0])
-                    || !isFinite(arguments[1])) {
+                    || !isFinite(arguments[0]) || !isFinite(arguments[1])) {
                 console.error('The argument(element) in wordcloud.size(width, height) should be number and number of svg');
                 return this;
             }
@@ -19187,7 +19626,6 @@
                 }
             }
         };
-
         wordcloud.color = function(_) {
             if (!arguments.length)
                 return color;
@@ -19253,8 +19691,7 @@
                     'widthAvail': widthAvail,
                     'heightAvail': heightAvail,
                     'tranX': tranX,
-                    'tranY': tranY,
-                    'format': format,
+                    'tranY': tranY, 'format': format,
                     'fontSize': fontSize,
                     'fontColor': fontColor,
                     'fontFamily': fontFamily,
