@@ -5730,6 +5730,7 @@
         chord.data = function(_) {
             if (arguments.length) {
                 if (_.type === 'xml') {
+                    _ = _.root;
                     _ = _.map(function(d) {
                         var obj = {};
                         d.row.forEach(function(p) {
