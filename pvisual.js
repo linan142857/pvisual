@@ -1610,8 +1610,8 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
 
                 d3.select(this)
@@ -1620,8 +1620,8 @@
                             'font-family': fontFamily})
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style('fill', legendColor)
                         .text(d.name);
@@ -2316,8 +2316,8 @@
                         .select('rect')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail - 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) - 20,
                             'y': i % legendColumnNo * 20 + 10})
                         .style({'fill': color(d.key),
                             'stroke': color(d.key)})
@@ -4264,15 +4264,15 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -5733,11 +5733,11 @@
                     _ = _.root;
                     _ = _.map(function(d) {
                         var obj = {};
-                        d.row.forEach(function(p) {
+                        d.row.row.forEach(function(p) {
                             var k = pvisual.keys(p)[0];
                             obj[k] = p[k];
                         });
-                        return obj;
+                        return fobj;
                     });
                 } else if (_.type === 'xlsx' || _.type === 'xls') {
                     var s = [];
@@ -8540,16 +8540,16 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
 
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -9457,15 +9457,15 @@
                             return d3.select(this)
                                     .classed('none') ? 0 : 1;
                         })
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -10364,15 +10364,15 @@
                         .style('fill', h)
                         .style('stroke', h)
                         .style('fill-opacity', 1)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -11128,15 +11128,15 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20 + 9});
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 19})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -13994,8 +13994,8 @@
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    radius * 2 + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    radius * 2) + 20,
                             'y': i % legendColumnNo * 20 + 19})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -15406,15 +15406,15 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -16306,16 +16306,16 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
 
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
@@ -17874,15 +17874,15 @@
                         .style({'fill': color(i),
                             'stroke': color(i)})
                         .style('fill-opacity', d._flag ? 1 : 0)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 20,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 20,
                             'y': i % legendColumnNo * 20});
                 d3.select(this)
                         .selectAll('text')
                         .transition()
                         .duration(duration / 2)
-                        .attr({'x': (i - i % legendColumnNo) / legendColumnNo * legendRowGap +
-                                    widthAvail + 40,
+                        .attr({'x': +((i - i % legendColumnNo) / legendColumnNo * legendRowGap +
+                                    widthAvail) + 40,
                             'y': i % legendColumnNo * 20 + 9})
                         .style({'font-size': legendSize,
                             'fill': legendColor,
