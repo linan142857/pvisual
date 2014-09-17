@@ -54,6 +54,13 @@
  * 新增图形样式co_occurrence_matrix
  */
 
+// ==========================================
+
+/*
+ * 2014-09-16(v0.0.7-alpha)
+ * 修复bug
+ * 
+ *//
 (function(_) {
     'use strict';
     
@@ -405,13 +412,13 @@
      * @returns {Array}
      */
     pvisual.clone = function(obj) {
-        if (typeof obj !== 'object' && typeof obj !== 'function') {
+        if (typeof obj !== 'object' && typeof obj !== 'function' && obj != null) {
             return obj;
         }
         if (typeof obj === 'function')
             return (new obj()).constructor;
         var clone = {};
-        if (obj.constructor === Array) {
+        if (obj && obj.constructor === Array) {
             clone = [];
             for (var i = 0; i < obj.length; i++)
                 clone.push(pvisual.clone(obj[i]));
@@ -1333,8 +1340,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -1347,7 +1353,8 @@
                         .classed('legends', true);
             });
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
             var dimensions = g.select('.dimensions')
                     .selectAll('.dimension')
                     .data(source);
@@ -2207,8 +2214,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             var g = d3.select(svg)
                     .select('g');
@@ -2220,7 +2226,7 @@
                         .classed('legends', true);
             });
 
-            g = d3.select(svg).select('g');
+            g = d3.select(svg).select('g').attr('transform', 'translate(' + tranX + ',' + tranY + ')');;
 
             var nodes = g.select('.nodes')
                     .selectAll('.node')
@@ -2623,7 +2629,6 @@
                 outlier.exit()
                         .transition()
                         .duration(duration)
-                        .attr('r', outclicleSize)
                         .style('opacity', 0)
                         .remove();
 
@@ -2631,6 +2636,7 @@
                         .duration(duration)
                         .style({'fill': color(d.key),
                             'stroke': color(d.key)})
+                        .attr('r', outclicleSize)
                         .attr('cx', everywidth / 2)
                         .attr('cy', function(i) {
                             return y(values[i]);
@@ -3190,15 +3196,15 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
             g.call(function(selection) {
                 selection.append('svg:g')
                         .classed('dimensions', true);
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var dimensions = g.select('.dimensions')
                     .selectAll('.dimension')
@@ -3502,7 +3508,7 @@
         var color = combo.color();
         /************局部变量***************/
         var interpolate = 'liner';
-        var tension = .7;
+        var tension = .1;
         var dimension;
         var padding = .1;
         var source;
@@ -3600,7 +3606,7 @@
                                 return {name: d, points: value[d].values()};
                             });
                     dimension.x = value.x.values();
-                } else if (_.type === 'tsv' || _.type === 'csv') {
+                } else if (_.type === 'tsv' || _.type === 'csv' || _.type === 'json') {
                     var value = {x: d3.set()};
                     dimension = pvisual.keys(_[0])
                             .filter(function(d) {
@@ -3614,27 +3620,6 @@
                         dimension.forEach(function(p) {
                             value[p.name].set(d.x, {x: d.x, y: +d[p.name]});
                             value.x.add(d.x);
-                        });
-                    });
-                    data = pvisual.keys(value)
-                            .filter(function(d) {
-                                return d !== 'x';
-                            })
-                            .map(function(d) {
-                                return {name: d, points: value[d].values()};
-                            });
-                    dimension.x = value.x.values();
-                } else if (_.type === 'json') {
-                    var value = {x: d3.set()};
-                    dimension = _.map(function(d) {
-                        value[d.name] = d3.map();
-                        return {name: d.name, _flag: true};
-                    });
-                    _.forEach(function(d) {
-                        d.points.forEach(function(p) {
-                            p.y = +p.y;
-                            value[d.name].set(p.x, {x: p.x, y: p.y});
-                            value.x.add(p.x);
                         });
                     });
                     data = pvisual.keys(value)
@@ -3754,8 +3739,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
             g.call(function(selection) {
                 selection.append('svg:g')
                         .classed('x-axis axis', true);
@@ -3775,7 +3759,8 @@
                         .classed('legends', true);
             });
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
             var bars = g.selectAll('.bars')
                     .selectAll('.bar')
                     .data(dimension.x);
@@ -5165,8 +5150,7 @@
                 .selectAll('g')
                 .data([1])
                 .enter()
-                .append('svg:g')
-                .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('rect')
@@ -5177,8 +5161,8 @@
                     .classed('columns', true);
             });
             g = d3.select(svg)
-                .select('g');
-
+                .select('g')
+                .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
             g.select('.background')
                 .attr({'width': widthAvail,
                     'height': heightAvail,
@@ -5711,7 +5695,7 @@
         var floatTag; // 活动标签
         var div; // 外层div
         var svg; // 外层svg
-        var padding = .01;
+        var padding = .05;
         var symmetry = true;
         var dimensions;
         var sum;
@@ -5816,7 +5800,7 @@
                 outerRadius = innerRadius * 1.1; // 外半径
 
             var layout = d3.layout.chord()
-                    .padding(padding)
+                    .padding(padding / 5)
                     .sortSubgroups(d3.descending)
                     .matrix(data);
             var g = d3.select(svg)
@@ -5825,9 +5809,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + (tranX + Math.min(widthAvail, heightAvail) / 2)
-                            + ',' + (tranY + Math.min(widthAvail, heightAvail) / 2) + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -5842,7 +5824,10 @@
                         .classed('legends', true);
             });
 
-            g = d3.select(svg).select('g');
+            g = d3.select(svg)
+                .select('g')
+                .attr('transform', 'translate(' + (tranX + Math.min(widthAvail, heightAvail) / 2)
+                 + ',' + (tranY + Math.min(widthAvail, heightAvail) / 2) + ')');
             var chords = g.select('.chords').
                     selectAll('path')
                     .data(layout.chords);
@@ -6680,11 +6665,11 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var nodes = g.datum(currentdata)
                     .selectAll('g')
@@ -7259,8 +7244,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
             var brush = g.append('svg:g')
                     .datum(function() {
                         return {selected: false, previouslySelected: false};
@@ -7275,7 +7259,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
             var links = g.select('.links')
                     .selectAll('.link')
                     .data(data.links);
@@ -8308,8 +8293,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -8323,7 +8307,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var dimensions = g.selectAll('.dimensions')
                     .selectAll('.dimension')
@@ -9268,8 +9253,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -9283,7 +9267,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var dimensions = g.selectAll('.dimensions')
                     .selectAll('.dimension')
@@ -10172,8 +10157,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -10183,7 +10167,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             chinamapUpdate(g);
             chinamapDraw(g);
@@ -10884,6 +10869,7 @@
             if (timeFormat !== null) {
                 isTimer = true;
             }
+            ytickLineLength = -widthAvail;
             var x;
             var y;
             var xAxis;
@@ -10967,7 +10953,6 @@
                     .scale(y)
                     .orient('left')
                     .ticks(ytickNumber)
-                    .tickSize(ytickLineLength)
                     .tickFormat(format);
 
             var line = d3.svg.line()
@@ -10989,8 +10974,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
             g.call(function(selection) {
                 selection.append('svg:g')
                         .classed('dimensions', true);
@@ -11003,7 +10987,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var dimensions = g.selectAll('.dimensions')
                     .selectAll('.dimension')
@@ -11029,6 +11014,7 @@
                     .remove();
             legendUpdate(legends);
             legendDraw(legends);
+            window.s = yAxis;
 
             axis(g, xAxis, yAxis);
 
@@ -11209,7 +11195,7 @@
                                     'dy': '.71em'})
                                 .text(yLegend);
 
-                        d3.select(this)
+                       d3.select(this)
                                 .transition()
                                 .duration(duration)
                                 .call(yAxis);
@@ -11930,8 +11916,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -11941,7 +11926,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var dimensions = g.select('.dimensions')
                     .style({'fill': 'none',
@@ -12560,8 +12546,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + (tranX + outerRadius * 1.2) + ',' + (tranY + outerRadius * 1.2) + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -12573,7 +12558,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + (tranX + outerRadius * 1.2) + ',' + (tranY + outerRadius * 1.2) + ')');
 
             var arcs = g.select('.arcs')
                     .datum(data.filter(function(d) {
@@ -13352,8 +13338,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -13368,7 +13353,8 @@
                         .classed('legends', true); // 图例
             });
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             /* 绘制数据点 */
             var items = g.select('.items')
@@ -13692,11 +13678,11 @@
                 line.transition()
                         .duration(duration)
                         .attr('x1', function(p, i) {
-                            return widthAvail / 2 - levelFactor * Math.sin(i *
+                            return widthAvail / 2  - levelFactor * Math.sin(i *
                                     2 * Math.PI / allAxis.length);
                         })
                         .attr('y1', function(p, i) {
-                            return heightAvail / 2 - levelFactor * Math.cos(i *
+                            return heightAvail / 2  - levelFactor * Math.cos(i *
                                     2 * Math.PI / allAxis.length);
                         })
                         .attr('x2', function(p, i) {
@@ -13869,6 +13855,7 @@
                         .selectAll('.line');
                 line.transition()
                         .duration(duration)
+                        .attr({'x1': widthAvail / 2, 'y1': heightAvail / 2})
                         .style({'stroke': axisPathColor,
                             'stroke-width': axisPathWidth})
                         .attrTween('x2', function() {
@@ -14503,8 +14490,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -14514,7 +14500,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var links = g.select('.links')
                     .selectAll('.link')
@@ -14548,6 +14535,8 @@
                     .style('stroke-width', function(d) {
                         return Math.max(1, d.dy);
                     })
+                    .style({'fill': 'none',
+                        'opacity': linkOpacity})
                     .style('stroke', linkColor)
                     .sort(function(a, b) {
                         return b.dy - a.dy;
@@ -14949,7 +14938,7 @@
         return sankey;
     };
     /**
-     * 三电2矩阵图
+     * 散点矩阵
      * @returns {_L5.pvisual.extend.sub|Window|Object}
      */
     pvisual.model.scatterplot = function() {
@@ -14972,11 +14961,11 @@
         var color = scatterplot.color();
 
         /************局部变量***************/
-        var radius;
-        var nodesize = 2;
+        var nodeSize = 2;
         var dimension;
-        var padding = .05;
+        var padding = .2;
         var gap;
+        var radius;
 
         /******坐标轴******/
         var xtickRotate = 0;
@@ -15062,7 +15051,7 @@
                 return d._flag;
             });
             radius = d3.min([widthAvail, heightAvail]) / dimen.length;
-            gap = padding * radius;
+            gap = padding / 5 * radius;
 
             var x = {};
             var y = {};
@@ -15091,8 +15080,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -15106,7 +15094,7 @@
                 selection.append('svg:g')
                         .classed('labels', true);
             });
-            g = d3.select(svg).select('g');
+            g = d3.select(svg).select('g').attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var labels = g.select('.labels')
                     .selectAll('.label')
@@ -15169,7 +15157,8 @@
                         })
                         .attr('cy', function(d) {
                             return y[p.y.name](d[p.y.name]);
-                        });
+                        })                       
+                        .attr('r', nodeSize);
 
                 circles.enter()
                         .append('svg:circle')
@@ -15185,7 +15174,7 @@
                         .attr('cy', function(d) {
                             return y[p.y.name](d[p.y.name]);
                         })
-                        .attr('r', nodesize);
+                        .attr('r', nodeSize);
 
                 cell.call(brush.x(x[p.x.name]).y(y[p.y.name]));
             });
@@ -15226,7 +15215,7 @@
                                 .attr('cy', function(d) {
                                     return y[p.y.name](d[p.y.name]);
                                 })
-                                .attr('r', nodesize);
+                                .attr('r', nodeSize);
                         cell.call(brush.x(x[p.x.name]).y(y[p.y.name]));
                     });
 
@@ -15844,15 +15833,15 @@
             }
         };
 
-        scatterplot.radius = function(_) {
+        scatterplot.nodeSize = function(_) {
             if (!arguments.length)
-                return nodesize;
+                return nodeSize;
             else {
                 if (!isFinite(arguments[0])) {
-                    console.error('The arguments in scatterplot.radius(radius) should be number');
+                    console.error('The arguments in scatterplot.nodeSize(nodeSize) should be number');
                     return this;
                 } else {
-                    nodesize = arguments[0];
+                    nodeSize = arguments[0];
                     return this;
                 }
             }
@@ -15872,7 +15861,7 @@
                     'fontFamily': fontFamily,
                     'color': color,
                     'duration': duration,
-                    'radius': nodesize,
+                    'nodeSize': nodeSize,
                     'padding': padding,
                     'xtickRotate': xtickRotate,
                     'ytickRotate': ytickRotate,
@@ -15904,7 +15893,7 @@
                 isFinite(_.duration) && scatterplot.duration(_.duration);
 
                 isFinite(_.padding) && scatterplot.padding(_.padding);
-                isFinite(_.radius) && scatterplot.radius(_.radius);
+                isFinite(_.nodeSize) && scatterplot.nodeSize(_.nodeSize);
 
                 isFinite(_.xtickRotate) && scatterplot.xtickRotate(_.xtickRotate);
                 isFinite(_.ytickRotate) && scatterplot.ytickRotate(_.ytickRotate);
@@ -16075,8 +16064,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -16106,7 +16094,8 @@
             dimensionDraw(dimensions, x, y);
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var legends = g.select('.legends')
                     .attr('transform', 'translate(' + legendTranX + ',' + legendTranY + ')')
@@ -17015,8 +17004,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + (tranX + radius * 1.1) + ',' + (tranY + radius * 1.1) + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -17024,7 +17012,9 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + (tranX + radius * 1.1) + ',' + (tranY + radius * 1.1) + ')');
+            
             var nodes = g.select('.nodes')
                     .selectAll('.node')
                     .data(node);
@@ -17602,8 +17592,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -17616,7 +17605,7 @@
                         .classed('legends', true);
             });
 
-            g = d3.select(svg).select('g');
+            g = d3.select(svg).select('g').attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var dimensions = g.select('.dimensions')
                     .selectAll('.dimension')
@@ -18565,8 +18554,9 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
+            
+                    d3.select('svg').select('g').attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -19135,8 +19125,7 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -19144,7 +19133,8 @@
             });
 
             g = d3.select(svg)
-                    .select('g');
+                    .select('g')
+                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             var nodes = g.select('.nodes')
                     .selectAll('.node')
@@ -19570,7 +19560,7 @@
         var fontFamily = function(d, i) {
             return 'Impact';
         }; // 字体样式
-        var padding = 1;
+        var padding = .2;
         var random = false;
 
         wordcloud.data = function(_) {
@@ -19586,12 +19576,12 @@
                         return obj;
                     });
                 } else if (_.type === 'xlsx' || _.type === 'xls') {
-                    var s = [];
+                    /*var s = [];
                     for (var i = 0; i < _.length; i++) {
                         var k = pvisual.keys(_[i])[0];
                         s = s.concat(_[i][k]);
-                    }
-                    _ = s;
+                    }*/
+                    _ = _[0]['wordcloud.txt'];
                 }
                 data = _;
                 return this;
@@ -19621,8 +19611,9 @@
                     .selectAll('g')
                     .data([1])
                     .enter()
-                    .append('svg:g')
-                    .attr('transform', 'translate(' + tranX + ',' + tranY + ')');
+                    .append('svg:g');
+            
+            d3.select('svg').select('g').attr('transform', 'translate(' + tranX + ',' + tranY + ')');
 
             g.call(function(selection) {
                 selection.append('svg:g')
@@ -19636,7 +19627,7 @@
                     .words(data.map(function(d) {
                         return {text: d.text, size: fontSize(d), url: d.url || ''};
                     }))
-                    .padding(padding)
+                    .padding(padding * 10)
                     .rotate(function() {
                         return random ? (Math.random() * 2) * 90 :
                                 ~~(Math.random() * 2) * 90;
@@ -19650,6 +19641,7 @@
         };
 
         function textDraw(data) {
+            console.log(data)
             var texts = d3.select(svg)
                     .select('.texts')
                     .selectAll('.text')
@@ -19848,11 +19840,11 @@
             }
         };
 
-        wordcloud.isRandom = function(_) {
+        wordcloud.random = function(_) {
             if (!arguments.length)
                 return random;
             else {
-                if (typeof arguments[0] !== true && typeof arguments[0] !== false) {
+                if (arguments[0] !== true && arguments[0] !== false) {
                     console.error('The arguments in wordcloud.isRandom(random) should be bool');
                     return this;
                 } else {
@@ -19879,7 +19871,7 @@
                     'color': color,
                     'duration': duration,
                     'padding': padding,
-                    'isRandom': random
+                    'random': random
                 };
             else if (typeof _ !== 'object') {
                 console.error('The arguments in map.options(options) should be object');
