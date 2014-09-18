@@ -60,7 +60,7 @@
  * 2014-09-16(v0.0.7-alpha)
  * 修复bug
  * 
- *//
+ */
 (function(_) {
     'use strict';
     
